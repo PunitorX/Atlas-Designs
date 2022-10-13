@@ -56,7 +56,7 @@ import { slideImages } from '../Data';
  
 
 const Slider = () => {
-    const [slider, setSlider] = useState(1);
+    const [slider, setSlider] = useState(0);
 
     const handleClick = (direction) => {
         if(direction === "left"){
