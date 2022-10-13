@@ -7,6 +7,7 @@ import { slideImages } from '../Data';
     width: 100%;
     height: 65vh;
     position: relative;
+    background-color: #444444;
  `
 
  const Arrow = styled.div`
@@ -31,8 +32,9 @@ import { slideImages } from '../Data';
  const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    justify-content: center;    
-    transform: translateX(0vw); 
+    justify-content: center;
+    transition: all 1.5s ease;    
+    transform: translateX(${props=> props.slider * -100}vw); 
  `
 
  const Slide = styled.div`
@@ -41,8 +43,8 @@ import { slideImages } from '../Data';
  `
 
  const ImgContainer = styled.div`
-    width: 1400px; 
-    padding: 0 130px;
+    width: 1300px;
+    max-width: 100%; 
     overflow: hidden;
  `
 
@@ -57,26 +59,25 @@ const Slider = () => {
     const [slider, setSlider] = useState(0);
 
     const handleClick = (direction) => {
-
+        if(direction === "left"){
+            setSlider(slider > 0 ? slider - 1 : 2)
+        } else {
+            setSlider(slider < 2 ? slider + 1 : 0)
+        }
     };
 
-    // if(direction === "left"){
-    //     setSlider(slider > 0 ? slider - 1 : 2)
-    // } else {
-    //     setSlider(slider < 2 ? slider + 1 : 0)
-    // }
+    
 
   return (
     <Container>
         <Arrow direction="left" onClick={()=>handleClick("left")}>
             <MdArrowBackIos  />
         </Arrow>
-        <Wrapper >
+        <Wrapper slider={slider}>
             <Slide>
                 {slideImages.map((image) => (
-                    
-                        <ImgContainer>
-                            <Image src={image.img} />
+                    <ImgContainer>
+                        <Image src={image.img} />
                         </ImgContainer>  
                 ))}
             </Slide>

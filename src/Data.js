@@ -7,5 +7,8 @@ export const slideImages = [
     },
     {
         img: './../images/img3.jpg'
-    }
+    },
+    // {
+    //     img: './../images/img4.jpg'
+    // }
 ]
