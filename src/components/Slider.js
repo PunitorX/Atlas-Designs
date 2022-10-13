@@ -30,33 +30,33 @@ import { slideImages } from '../Data';
  `
 
  const Wrapper = styled.div`
-    height: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     transition: all 1.5s ease;    
-    transform: translateX(${props=> props.slider * -100}vw); 
+    transform: translateX(${props=> props.slider * -101}rem); 
+    overflow: hidden;
  `
 
  const Slide = styled.div`
-    display: flex;
-     
+    margin: 0 155px;
  `
 
  const ImgContainer = styled.div`
-    width: 1300px;
-    max-width: 100%; 
-    overflow: hidden;
+    display: flex;
+    width: 1300px;  
+    //  object-fit: fill;
  `
 
  const Image = styled.img`
     height: 65vh;
     width: 100%;
-    object-fit: fill;
+    
 `
  
 
 const Slider = () => {
-    const [slider, setSlider] = useState(0);
+    const [slider, setSlider] = useState(1);
 
     const handleClick = (direction) => {
         if(direction === "left"){
@@ -74,13 +74,13 @@ const Slider = () => {
             <MdArrowBackIos  />
         </Arrow>
         <Wrapper slider={slider}>
-            <Slide>
-                {slideImages.map((image) => (
+            {slideImages.map((image) => (
+                <Slide>
                     <ImgContainer>
                         <Image src={image.img} />
-                        </ImgContainer>  
-                ))}
-            </Slide>
+                    </ImgContainer>  
+                </Slide>
+            ))}
         </Wrapper>
         <Arrow direction="right" onClick={()=>handleClick("right")}>
             <MdArrowForwardIos  />
