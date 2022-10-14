@@ -4,7 +4,7 @@ import  { MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md'
 import { slideImages } from '../Data';
 
  const Container = styled.div`
-    width: 100%;
+    width: 100vw;
     height: 65vh;
     position: relative;
     background-color: #444444;
@@ -20,8 +20,8 @@ import { slideImages } from '../Data';
     justify-content: center;
     position: absolute;
     top: 0;
-    left: ${props => props.direction === 'left' && '325px'};
-    right: ${props => props.direction === 'right' && '325px'};
+    left: ${props => props.direction === 'left' && '25px'};
+    right: ${props => props.direction === 'right' && '25px'};
     bottom: 0;
     margin: auto;
     opacity: 0.7;
@@ -30,28 +30,35 @@ import { slideImages } from '../Data';
  `
 
  const Wrapper = styled.div`
-    height: auto;
-    display: flex;
-    justify-content: center;
+    // width: 100%;
     transition: all 1.5s ease;    
     transform: translateX(${props=> props.slider * -101}rem); 
-    overflow: hidden;
  `
+ 
 
- const Slide = styled.div`
-    margin: 0 155px;
+ const Slide = styled.div`  
+    display: flex;
  `
 
  const ImgContainer = styled.div`
-    display: flex;
-    width: 1300px;  
-    //  object-fit: fill;
+    width: 50%;  
+    flex: 1;
  `
 
  const Image = styled.img`
     height: 65vh;
-    width: 100%;
-    
+    padding-left: 10rem;
+`
+
+const InfoContainer = styled.div`
+    width: 50%;
+    display: flex;
+    align-items: center;140
+    justify-content: center;
+`
+
+const Info = styled.div`
+
 `
  
 
@@ -75,11 +82,14 @@ const Slider = () => {
         </Arrow>
         <Wrapper slider={slider}>
             {slideImages.map((image) => (
-                <Slide>
-                    <ImgContainer>
-                        <Image src={image.img} />
-                    </ImgContainer>  
-                </Slide>
+            <Slide>
+                <ImgContainer>
+                    <Image src={image.img} />
+                </ImgContainer>  
+                <InfoContainer>
+                    <Info>{image.desc}</Info>
+                </InfoContainer>
+            </Slide>
             ))}
         </Wrapper>
         <Arrow direction="right" onClick={()=>handleClick("right")}>
