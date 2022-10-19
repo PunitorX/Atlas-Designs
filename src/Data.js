@@ -1,10 +1,10 @@
 export const slideImages = [
     {
-      image: './../images/img1.png',
+      // image: './../images/img.jfif',
       caption: 'Hello'
     },
     {
-      image: './../images/img2.png',
-      caption: 'Hello'
+      // image: './../images/img2.png',
+      caption: 'Hello there'
     }
   ];

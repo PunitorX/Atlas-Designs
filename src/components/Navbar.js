@@ -4,9 +4,9 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Container = styled.div`
-    height: 75px;
-    background-color: #171717;
-    color: #EDEDED;
+  height: 75px;
+  background-color: #171717;
+  color: #EDEDED;
 `
 
 const Wrapper = styled.div`
