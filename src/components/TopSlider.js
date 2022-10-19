@@ -28,13 +28,13 @@ const properties = {
 
 const TopSlider = () => {
   return (
-    <div className="slide-container" style={{backgroundColor: '#444444', width: '100vw', height: '65vh', textAlign: 'center'}} >
+    <div className="slide-container" style={{backgroundColor: '#444444', width: '100vw', height: '65vh', textAlign: 'center', color: '#fff'}} >
         <Slide {...properties} >
 
-                {slideImages.map((slideImage, index)=> (
+                {slideImages.map((img, index)=> (
                 <div className="each-slide" key={index}>
-                    <div style={{'backgroundImage': `url(${slideImage.image})`}}>
-                    <span>{slideImage.caption}</span>
+                    <div style={{backgroundImage: `url(${img.image}`, backgroundSize: '100%', height: '65vh', width: '100%', objectFit: 'cover', backgroundRepeat: 'no-repeat' }}>
+                    <span>{img.caption}</span>
                     </div>
                 </div>
                 ))} 
