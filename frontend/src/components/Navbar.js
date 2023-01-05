@@ -5,8 +5,8 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Container = styled.div`
   height: 75px;
-  background-color: #171717;
-  color: #EDEDED;
+  background-color: #395B64;
+  color: #fff;
 `
 
 const Wrapper = styled.div`
