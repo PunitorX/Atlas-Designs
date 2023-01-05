@@ -5,7 +5,8 @@ import styled from 'styled-components'
 
 const Body = styled.div`
   height: 90vh;
-  background-color: #A5C9CA;
+  background-color: #2C3333;
+  color: #fff;
 `
 
 const BodyContainer = styled.div`

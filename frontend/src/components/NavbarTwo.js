@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     height: 40px;
-    background-color: #6D8B74;
+    background-color: #395B64;
     font-family: 'Roboto Slab', serif;
     color: #fff;
     letter-spacing: 1px;
