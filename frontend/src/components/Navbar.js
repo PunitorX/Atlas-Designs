@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faAnglesDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import ButtonOne from './Buttons/ButtonOne'
 
 const Nav = styled.nav`
   height: 12vh;
@@ -50,11 +51,13 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
           <NavItem>
             <NavLink>
               {itemOne}
+              <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
               {itemTwo}
+              <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/>
             </NavLink>
           </NavItem>
           <NavItem>
@@ -77,7 +80,7 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
               <FontAwesomeIcon icon={faCircleUser} size={'xl'}/> My Account
             </NavLink>
           </NavItem>
-          // Sign In / Register Button
+          <ButtonOne>Login / Register</ButtonOne>
         </NavList>
 
       </NavContainer>
