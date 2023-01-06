@@ -1,5 +1,3 @@
-export default = [
-  {
+export const NavItems = {
     itemOne: 'Support'
-  }
-]
+}
