@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faAnglesDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import ButtonOne from './Buttons/ButtonOne'
 
 const Nav = styled.nav`
@@ -24,7 +24,7 @@ const Search = styled.div`
 `
 
 const NavList = styled.ul`
-
+  font-family: 'Roboto Slab', sans-serif;
 `
 
 const NavItem = styled.li`

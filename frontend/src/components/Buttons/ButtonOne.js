@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const ButtonContainer = styled(Link)`
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     letter-spacing: 1px;
     font-weight: 600;
