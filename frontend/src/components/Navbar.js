@@ -4,7 +4,7 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Navbar = () => {
   return (
-    
+    <></>
   )
 }
 
