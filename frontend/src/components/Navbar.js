@@ -33,7 +33,7 @@ const NavList = styled.ul`
   display: flex;
   /* justify-content: center; */
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 `
 
 const NavItem = styled.li`
@@ -44,6 +44,23 @@ const NavItem = styled.li`
 const NavLink = styled(Link)`
   text-decoration: none;
   color: #fff;
+`
+
+const NavUser = styled.div`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+`
+
+const NavLogin = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const NavRegister = styled.div`
+  
 `
 
 const Navbar = ({itemOne, itemTwo, itemThree}) => {
@@ -60,35 +77,42 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
         <NavList>
           <NavItem>
             <NavLink>
+              <FontAwesomeIcon icon={faHeart} size={'lg'}/>                       
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
               {itemOne}
-              <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/>
+              <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}/>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
               {itemTwo}
-              <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
               {itemThree}
-              <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/>
+              {/* <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/> */}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faHeart} size={'xl'}/>                       
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faShoppingCart} size={'xl'}/>
-            </NavLink>
+            <NavUser>
+              <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
+              <NavLogin>Login <span>/ Register</span></NavLogin> 
+              {/* Will need to be a ternary for login verification */}
+            </NavUser>
           </NavItem>
           
         </NavList>
-        <ButtonOne>Login / Register</ButtonOne>
+        {/* <ButtonOne>Login / Register</ButtonOne> */}
+
 
       </NavContainer>
     </Nav>

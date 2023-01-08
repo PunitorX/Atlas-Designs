@@ -1,5 +1,5 @@
 export const NavItems = {
-    itemOne: 'Components',
+    itemOne: 'Products',
     itemTwo: 'Builds',
-    itemThree: 'Account / Orders',
+    itemThree: 'Projects',
 }

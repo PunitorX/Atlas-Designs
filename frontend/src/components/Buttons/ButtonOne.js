@@ -42,7 +42,7 @@ const ButtonContainer = styled(Link)`
     }
     &:hover {
       box-shadow: none;
-      color: #DFF6FF;
+      color: #fff;
     }
     &:hover:after {
       transform: skewX(45deg) scale(1, 1);
