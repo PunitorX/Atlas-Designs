@@ -1,19 +1,23 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 
 const Search = styled.div`
-  width: 450px;
-  display: flex;
-  justify-content: flex-end;
+  /* width: 650px; */
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  /* align-items: center; */
 `
 
 const SearchInput = styled.input`
-  width: 375px;
+  width: 525px;
   height: 25px;
-  padding: .5rem;
+  padding: .5rem 1rem;
+  font-size: 14px;
   font-family: 'Roboto Slab', sans-serif;
   letter-spacing: 1px;
-  border-radius: 15px;
+  border-radius: 25px;
   border: none;
   outline: none;
 
@@ -25,7 +29,8 @@ const SearchInput = styled.input`
 function SearchBar() {
   return (
     <Search>
-      <SearchInput />
+      <SearchInput placeholder='Search...'/>
+      <FontAwesomeIcon style={{cursor: 'pointer'}} icon={faSearch} transform={'left-35'}/>
     </Search>
     
   )

@@ -7,7 +7,7 @@ import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome
 import ButtonOne from './Buttons/ButtonOne'
 
 const Nav = styled.nav`
-  height: 12vh;
+  height: 10vh;
   background-color: #395B64;
 `
 
@@ -28,22 +28,34 @@ const NavLogo = styled.div`
 `
 
 const NavList = styled.ul`
+  height: 100%;
+  margin: 0;
   font-family: 'Roboto Slab', sans-serif;
   letter-spacing: 1.2px;
   display: flex;
-  /* justify-content: center; */
-  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
 `
 
 const NavItem = styled.li`
   list-style-type: none;
-  padding: 0 1.2rem;
+  margin: 0 .5rem;
+  height: inherit;
 `
 
 const NavLink = styled(Link)`
+  padding: 1rem;
   text-decoration: none;
   color: #fff;
+
+  &:hover {
+      background-color: #fff;
+      transition: all .3s ease-in-out;
+      color: #000;
+      padding: .5rem 1rem;
+      opacity: .6;
+      border-radius: 5px;
+    }
 `
 
 const NavUser = styled.div`
