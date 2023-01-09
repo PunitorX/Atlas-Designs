@@ -28,19 +28,17 @@ const NavLogo = styled.div`
 `
 
 const NavList = styled.ul`
-  height: 100%;
-  margin: 0;
   font-family: 'Roboto Slab', sans-serif;
   letter-spacing: 1.2px;
   display: flex;
-  justify-content: center;
-  font-size: 1.2rem;
+  align-items: center;
+  font-size: 1rem;
 `
 
 const NavItem = styled.li`
   list-style-type: none;
   margin: 0 .5rem;
-  height: inherit;
+  height: inherit; 
 `
 
 const NavLink = styled(Link)`
@@ -48,14 +46,15 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: #fff;
 
+  /* &:nth-child(1):hover {
+    color: red;
+  } */
+
   &:hover {
-      background-color: #fff;
-      transition: all .3s ease-in-out;
-      color: #000;
-      padding: .5rem 1rem;
-      opacity: .6;
-      border-radius: 5px;
-    }
+    transition: all .3s ease-in-out;
+    color: #EDA920;
+  }
+  
 `
 
 const NavUser = styled.div`
@@ -64,6 +63,12 @@ const NavUser = styled.div`
   align-items: center;
   gap: 10px;
   font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    transition: all .3s ease-in;
+    color: #EDA920;
+  }
 `
 
 const NavLogin = styled.div`
@@ -75,7 +80,7 @@ const NavRegister = styled.div`
   
 `
 
-const Navbar = ({itemOne, itemTwo, itemThree}) => {
+const Navbar = ({itemOne, itemTwo, itemThree, itemFour}) => {
   return (
     <Nav>
       <NavContainer>
@@ -89,7 +94,7 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
         <NavList>
           <NavItem>
             <NavLink>
-              <FontAwesomeIcon icon={faHeart} size={'lg'}/>                       
+              <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
             </NavLink>
           </NavItem>
           <NavItem>
@@ -111,7 +116,11 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
           <NavItem>
             <NavLink>
               {itemThree}
-              {/* <FontAwesomeIcon icon={faAngleDown} size={'l'} transform={'right-5'}/> */}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              {itemFour}
             </NavLink>
           </NavItem>
           <NavItem>
@@ -123,8 +132,6 @@ const Navbar = ({itemOne, itemTwo, itemThree}) => {
           </NavItem>
           
         </NavList>
-        {/* <ButtonOne>Login / Register</ButtonOne> */}
-
 
       </NavContainer>
     </Nav>
