@@ -3,13 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 
-const Search = styled.div`
-  /* width: 650px; */
-  /* display: flex; */
-  /* justify-content: flex-end; */
-  /* align-items: center; */
-`
-
 const SearchInput = styled.input`
   width: 525px;
   height: 25px;
@@ -21,6 +14,7 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
 
+
   &:focus {
     border: 5px solid #A5C9CA;
   }
@@ -28,11 +22,10 @@ const SearchInput = styled.input`
 
 function SearchBar() {
   return (
-    <Search>
+    <div>
       <SearchInput placeholder='Search...'/>
       <FontAwesomeIcon style={{cursor: 'pointer'}} icon={faSearch} transform={'left-35'}/>
-    </Search>
-    
+    </div>
   )
 }
 

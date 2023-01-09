@@ -25,6 +25,7 @@ const NavLogo = styled.div`
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   color: #fff;
+  padding: 0 1rem;
 `
 
 const NavList = styled.ul`
@@ -33,6 +34,7 @@ const NavList = styled.ul`
   display: flex;
   align-items: center;
   font-size: 1rem;
+  padding: 0;
 `
 
 const NavItem = styled.li`
