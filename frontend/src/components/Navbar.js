@@ -8,6 +8,7 @@ import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome
 const Nav = styled.nav`
   height: 10vh;
   background-color: #395B64;
+  border-bottom: 2px solid #2C3333;
 `
 
 const NavContainer = styled.div`
