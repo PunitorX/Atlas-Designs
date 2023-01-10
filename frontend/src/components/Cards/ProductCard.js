@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function HomeCard() {
+function ProductCard() {
   return (
-    <div>HomeCard</div>
+    <div>ProductCard</div>
   )
 }
 
-export default HomeCard
+export default ProductCard
