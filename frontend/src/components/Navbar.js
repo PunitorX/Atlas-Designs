@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { device } from '../DeviceSize'
 
 const Nav = styled.nav`
   height: 8vh;
