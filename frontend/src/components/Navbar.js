@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = styled.nav`
-  height: 10vh;
+  height: 8vh;
   background-color: #395B64;
   border-bottom: 2px solid #2C3333;
 `
