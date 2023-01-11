@@ -24,7 +24,7 @@ function getProductData(id) {
     return undefined
   }
 
-  return productArray
+  return productData
 }
 
 export { productArray, getProductData }

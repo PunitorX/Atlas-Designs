@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { CartContext } from '../../CartContext'
 
 const Card = styled.div`
   margin: .5rem 0;
@@ -37,13 +38,19 @@ const Image = styled.img`
 
 `
 
-function ProductCard() {
+function ProductCard(props) {
+  const product = props.product;
+  const cart = useContext(CartContext)
+  console.log(cart.items)
+
   return (
+    <>
     <Card>
       <CardContainer>
         <ProductContainer>
           <ProductName></ProductName>
-          <ProductRating></ProductRating>
+          <ProductRating>
+          </ProductRating>
           <ProductPrice></ProductPrice>
         </ProductContainer>
         <CardImage>
@@ -51,6 +58,7 @@ function ProductCard() {
         </CardImage>
       </CardContainer>   
     </Card>
+    </>
   )
 }
 
