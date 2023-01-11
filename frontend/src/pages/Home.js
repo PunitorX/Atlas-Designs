@@ -16,7 +16,7 @@ const BodyContainer = styled.div`
 `
 
 const BodySection = styled.section`
-  height: 100vh;
+  height: auto;
 `
 
 const SectionHeader = styled.div`
@@ -36,10 +36,21 @@ const SectionView = styled.a`
   cursor: pointer;
   letter-spacing: .5px;
   font-family: 'Montserrat', sans-serif;
+  font-weight:600 ;
 
-  &:hover {
-    transition: all .3s ease-in;
-    color: #EDA920;
+  &:after {
+  content: '';
+	display: block;
+	margin: auto;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+  }
+
+  &:hover:after {
+    width: 100%;
+    background: #395B64;
   }
 `
 
@@ -53,7 +64,6 @@ const Home = () => {
   return (
     <Body>
       <BodyContainer>
-
         <BodySection>
           <SectionHeader>
             <SectionTitle>Trending Parts</SectionTitle>
@@ -73,10 +83,23 @@ const Home = () => {
         </BodySection>
 
         <BodySection>
-          <SectionHeader>Recent Builds</SectionHeader>
+          <SectionHeader>
+            <SectionTitle>Recent Builds</SectionTitle>
+            <SectionView>
+              View More
+              <FontAwesomeIcon icon={faAngleRight} size={'xs'} transform={'down-2, right-2'}/>
+            </SectionView>
+          </SectionHeader>
         </BodySection>
+
         <BodySection>
-          <SectionHeader>Our Best Deals</SectionHeader>
+          <SectionHeader>
+            <SectionTitle>Our Best Deals</SectionTitle>
+            <SectionView>
+              View More
+              <FontAwesomeIcon icon={faAngleRight} size={'xs'} transform={'down-2, right-2'}/>
+            </SectionView>
+          </SectionHeader>
         </BodySection>
       </BodyContainer>
     </Body>
