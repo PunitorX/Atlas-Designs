@@ -37,9 +37,8 @@ const NavList = styled.ul`
   font-size: 1rem;
   padding: 0;
 
-  @media ${device.mobileS} {
-    /* max-width: 800px; */
-    /* display: none; */
+  @media ${device.mobileL} {
+    display: none;
   }
 `
 
@@ -85,14 +84,6 @@ const NavLogin = styled.div`
 
 const NavRegister = styled.div`
   
-`
-
-const MenuIcon = styled.div`
-  display: none;
-
-  @media ${device.mobileS} {
-    max-width: 800px;
-  }
 `
 
 function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
@@ -152,13 +143,6 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           </NavItem>
           
         </NavList>
-
-        <MenuIcon onClick={handleClick}>
-          <i className={ click ?
-          <FontAwesomeIcon icon={faTimes} style={{color: '#fff;'}} /> 
-          : 
-          <FontAwesomeIcon icon={faBars} style={{color: '#fff;'}} />}/> 
-        </MenuIcon>
 
       </NavContainer>
     </Nav>

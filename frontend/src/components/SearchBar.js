@@ -6,6 +6,9 @@ import { device } from '../DeviceSize'
 
 const Search = styled.div`
 
+  @media ${device.mobileL} {
+    display: none;
+  }
 `
 
 const SearchInput = styled.input`
