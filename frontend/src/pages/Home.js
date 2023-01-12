@@ -25,6 +25,10 @@ const SectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media ${device.tabletP} {
+    font-size: 1.2rem;
+  }
+
   @media ${device.mobileL} {
     font-size: 13px;
   }
@@ -42,6 +46,10 @@ const SectionTitle = styled.h2`
   font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @media ${device.tabletP} {
+    font-size: 2.4rem;
+  }
 
   @media ${device.mobileL} {
     font-size: 1.4rem;

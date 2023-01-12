@@ -6,6 +6,15 @@ import { device } from '../DeviceSize'
 
 const Search = styled.div`
 
+  @media ${device.tabletP} {
+    display: flex;
+    align-items: center;
+  }
+
+  @media ${device.tablet} {
+    /* display: none; */
+  }
+
   @media ${device.mobileL} {
     display: none;
   }
@@ -25,6 +34,10 @@ const SearchInput = styled.input`
 
   &:focus {
     border: 5px solid #A5C9CA;
+  }
+  
+  @media ${device.tabletP} {
+    width: 325px;
   }
 
   @media ${device.tablet} {

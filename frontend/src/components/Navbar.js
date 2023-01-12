@@ -18,7 +18,7 @@ const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 2rem;
-  padding: 0 1rem;
+  padding-right: 1rem;
 `
 
 const NavLogo = styled.div`
@@ -28,11 +28,8 @@ const NavLogo = styled.div`
   color: #fff;
   padding: 0 1rem;
 
-  @media ${device.mobileL} {
-    padding-left: 0;
-  }
-
   @media ${device.mobileM} {
+    padding-left: 0;
     font-size: 1.4rem;
   }
 `
@@ -47,10 +44,6 @@ const NavList = styled.ul`
 
   @media ${device.mobileL} {
     display: none;
-  }
-
-  @media ${device.tablet} {
-    display: block;
   }
 `
 
@@ -74,8 +67,14 @@ const NavLink = styled(Link)`
     color: #EDA920;
   }
 
-  @media ${device.tablet} {
+  @media ${device.tabletP} {
     display: none;
+  }
+
+  &.link {
+    @media ${device.tabletP} {
+      display: none;
+    }
   }
 `
 
@@ -92,11 +91,6 @@ const NavUser = styled.div`
     color: #EDA920;
   }
 
-  @media ${device.tablet} {
-    font-size: 1.3rem;
-    padding-right: 1rem;
-  }
-
   @media ${device.mobileM} {
     font-size: 1rem;
   }
@@ -105,6 +99,10 @@ const NavUser = styled.div`
 const NavLogin = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media ${device.tabletP} {
+    display: none;
+  }
 
   @media ${device.tablet} {
     display: none;
@@ -118,6 +116,17 @@ const NavRegister = styled.div`
 const MenuIcon = styled.div`
   display: none;
 
+  
+  @media ${device.tabletP} {
+    display: block;
+    color: #fff;
+  }
+ 
+  @media ${device.tablet} {
+    display: block;
+    color: #fff;
+  }
+
   @media ${device.mobileM} {
     font-size: .8rem;
   }
@@ -125,10 +134,6 @@ const MenuIcon = styled.div`
   @media ${device.mobileL} {
     display: block;
     color: #fff;
-  }
-
-  @media ${device.tablet} {
-    display: block;
   }
 `
 
@@ -179,23 +184,23 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink className='link'>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}/>
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink className='link'>
               {itemTwo}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink className='link'>
               {itemThree}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink className='link'>
               {itemFour}
             </NavLink>
           </NavItem>
