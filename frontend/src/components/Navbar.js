@@ -42,6 +42,14 @@ const NavList = styled.ul`
   font-size: 1rem;
   padding: 0;
 
+  @media ${device.tabletP} {
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+  }
+
   @media ${device.mobileL} {
     display: none;
   }
@@ -51,6 +59,10 @@ const NavItem = styled.li`
   list-style-type: none;
   margin: 0 .5rem;
   height: inherit; 
+
+  @media ${device.tabletP} {
+    margin: 0;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -68,7 +80,7 @@ const NavLink = styled(Link)`
   }
 
   @media ${device.tabletP} {
-    display: none;
+    font-size: 1.2rem;
   }
 
   &.link {
@@ -84,11 +96,16 @@ const NavUser = styled.div`
   align-items: center;
   gap: 10px;
   font-size: 1rem;
+  padding: 1rem;
   cursor: pointer;
 
   &:hover {
     transition: all .3s ease-in;
     color: #EDA920;
+  }
+
+  @media ${device.tabletP} {
+    font-size: 1.2rem;
   }
 
   @media ${device.mobileM} {
@@ -115,7 +132,6 @@ const NavRegister = styled.div`
 
 const MenuIcon = styled.div`
   display: none;
-
   
   @media ${device.tabletP} {
     display: block;

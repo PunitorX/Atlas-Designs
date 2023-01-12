@@ -41,7 +41,7 @@ const SearchInput = styled.input`
   }
 
   @media ${device.tablet} {
-    width: 375px;
+    width: 300px;
   }
 `
 

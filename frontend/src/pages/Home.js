@@ -26,11 +26,11 @@ const SectionHeader = styled.div`
   align-items: center;
 
   @media ${device.tabletP} {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   @media ${device.mobileL} {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   @media ${device.mobileM} {
