@@ -2,6 +2,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../DeviceSize'
+
+const Search = styled.div`
+
+`
 
 const SearchInput = styled.input`
   width: 525px;
@@ -22,10 +27,10 @@ const SearchInput = styled.input`
 
 function SearchBar() {
   return (
-    <div>
+    <Search>
       <SearchInput placeholder='Search...'/>
       <FontAwesomeIcon style={{cursor: 'pointer'}} icon={faSearch} transform={'left-35'}/>
-    </div>
+    </Search>
   )
 }
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faCircleUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { device } from '../DeviceSize'
 
 const Nav = styled.nav`
@@ -36,6 +36,11 @@ const NavList = styled.ul`
   align-items: center;
   font-size: 1rem;
   padding: 0;
+
+  @media ${device.mobileS} {
+    /* max-width: 800px; */
+    /* display: none; */
+  }
 `
 
 const NavItem = styled.li`
@@ -57,7 +62,6 @@ const NavLink = styled(Link)`
     transition: all .3s ease-in-out;
     color: #EDA920;
   }
-  
 `
 
 const NavUser = styled.div`
@@ -83,7 +87,20 @@ const NavRegister = styled.div`
   
 `
 
-const Navbar = ({itemOne, itemTwo, itemThree, itemFour}) => {
+const MenuIcon = styled.div`
+  display: none;
+
+  @media ${device.mobileS} {
+    max-width: 800px;
+  }
+`
+
+function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => setClick(!click)
+  const closeMobileMenu = () => setClick(false);
+
   return (
     <Nav>
       <NavContainer>
@@ -92,7 +109,7 @@ const Navbar = ({itemOne, itemTwo, itemThree, itemFour}) => {
           AD
         </NavLogo>
 
-        <SearchBar />
+        <SearchBar />     
 
         <NavList>
           <NavItem>
@@ -135,6 +152,13 @@ const Navbar = ({itemOne, itemTwo, itemThree, itemFour}) => {
           </NavItem>
           
         </NavList>
+
+        <MenuIcon onClick={handleClick}>
+          <i className={ click ?
+          <FontAwesomeIcon icon={faTimes} style={{color: '#fff;'}} /> 
+          : 
+          <FontAwesomeIcon icon={faBars} style={{color: '#fff;'}} />}/> 
+        </MenuIcon>
 
       </NavContainer>
     </Nav>
