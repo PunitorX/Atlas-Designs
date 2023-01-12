@@ -14,6 +14,10 @@ const Card = styled.div`
     height: 325px;
     width: 100%;
   }
+
+  @media ${device.mobileM} {
+    height: 250px;
+  }
 `
 
 const CardContainer = styled.div`

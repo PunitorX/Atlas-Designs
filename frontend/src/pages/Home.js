@@ -28,6 +28,12 @@ const SectionHeader = styled.div`
   @media ${device.mobileL} {
     font-size: 13px;
   }
+
+  @media ${device.mobileM} {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
 `
 
 const SectionTitle = styled.h2`

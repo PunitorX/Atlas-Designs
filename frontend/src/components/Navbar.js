@@ -31,6 +31,10 @@ const NavLogo = styled.div`
   @media ${device.mobileL} {
     padding-left: 0;
   }
+
+  @media ${device.mobileM} {
+    font-size: 1.4rem;
+  }
 `
 
 const NavList = styled.ul`
@@ -47,8 +51,6 @@ const NavList = styled.ul`
 
   @media ${device.tablet} {
     display: block;
-
-    ()
   }
 `
 
@@ -94,6 +96,10 @@ const NavUser = styled.div`
     font-size: 1.3rem;
     padding-right: 1rem;
   }
+
+  @media ${device.mobileM} {
+    font-size: 1rem;
+  }
 `
 
 const NavLogin = styled.div`
@@ -111,6 +117,10 @@ const NavRegister = styled.div`
 
 const MenuIcon = styled.div`
   display: none;
+
+  @media ${device.mobileM} {
+    font-size: .8rem;
+  }
 
   @media ${device.mobileL} {
     display: block;
