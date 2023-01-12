@@ -86,6 +86,34 @@ const NavRegister = styled.div`
   
 `
 
+const MenuIcon = styled.div`
+  display: none;
+
+  @media ${device.mobileL} {
+    display: block;
+    color: #fff;
+  }
+`
+
+// const NavMenuActive = styled.ul`
+//   background: #19191a;
+//     left: 0;
+//     opacity: 1;
+//     transition: all 0.6s ease;
+//     z-index: 1;
+// `
+
+// const NavMenu = styled.ul`
+//   display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     position: absolute;
+//     top: 80px;
+//     left: -100%;
+//     opacity: 1;
+//     transition: all 0.5s ease;
+// `
+
 function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
   const [click, setClick] = useState(false)
 
@@ -102,7 +130,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <SearchBar />     
 
-        <NavList>
+        <NavList> 
           <NavItem>
             <NavLink>
               <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
@@ -143,6 +171,14 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           </NavItem>
           
         </NavList>
+
+        <MenuIcon onClick={handleClick}>
+          {click ? 
+          <FontAwesomeIcon icon={faTimes} size={'2xl'} />
+          : 
+          <FontAwesomeIcon icon={faBars} size={'2xl'} />
+          }
+        </MenuIcon>
 
       </NavContainer>
     </Nav>
