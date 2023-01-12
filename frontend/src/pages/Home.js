@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ProductCard from '../components/Cards/ProductCard'
 import { productArray } from '../Data/ProductData'
+import { device } from '../DeviceSize'
 
 const Body = styled.body`
   height: auto;
@@ -23,6 +24,10 @@ const SectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${device.mobileL} {
+    font-size: 13px;
+  }
 `
 
 const SectionTitle = styled.h2`
@@ -31,6 +36,10 @@ const SectionTitle = styled.h2`
   font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
 `
 const SectionView = styled.a`
   cursor: pointer;
@@ -77,8 +86,8 @@ const Home = () => {
             <ProductCard />
             <ProductCard />
             <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {/* <ProductCard />
+            <ProductCard /> */}
           </SectionCard>
         </BodySection>
 

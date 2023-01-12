@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../CartContext'
+import { device } from '../../DeviceSize'
 
 const Card = styled.div`
   margin: .5rem 0;
@@ -8,6 +9,11 @@ const Card = styled.div`
   width: 450px;
   background-color: #2C3333;
   border-radius: 10px;
+
+  @media ${device.tablet} {
+    height: 325px;
+    width: 100%;
+  }
 `
 
 const CardContainer = styled.div`

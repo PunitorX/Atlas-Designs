@@ -27,6 +27,10 @@ const NavLogo = styled.div`
   font-weight: 600;
   color: #fff;
   padding: 0 1rem;
+
+  @media ${device.mobileL} {
+    padding-left: 0;
+  }
 `
 
 const NavList = styled.ul`
@@ -39,6 +43,12 @@ const NavList = styled.ul`
 
   @media ${device.mobileL} {
     display: none;
+  }
+
+  @media ${device.tablet} {
+    display: block;
+
+    ()
   }
 `
 
@@ -61,6 +71,10 @@ const NavLink = styled(Link)`
     transition: all .3s ease-in-out;
     color: #EDA920;
   }
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 const NavUser = styled.div`
@@ -75,11 +89,20 @@ const NavUser = styled.div`
     transition: all .3s ease-in;
     color: #EDA920;
   }
+
+  @media ${device.tablet} {
+    font-size: 1.3rem;
+    padding-right: 1rem;
+  }
 `
 
 const NavLogin = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 const NavRegister = styled.div`
@@ -92,6 +115,10 @@ const MenuIcon = styled.div`
   @media ${device.mobileL} {
     display: block;
     color: #fff;
+  }
+
+  @media ${device.tablet} {
+    display: block;
   }
 `
 

@@ -26,6 +26,10 @@ const SearchInput = styled.input`
   &:focus {
     border: 5px solid #A5C9CA;
   }
+
+  @media ${device.tablet} {
+    width: 375px;
+  }
 `
 
 function SearchBar() {
