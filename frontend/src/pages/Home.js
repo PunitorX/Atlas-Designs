@@ -48,7 +48,7 @@ const SectionTitle = styled.h2`
   letter-spacing: 1px;
 
   @media ${device.tabletP} {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   @media ${device.mobileL} {
@@ -74,6 +74,10 @@ const SectionView = styled.a`
   &:hover:after {
     width: 100%;
     background: #395B64;
+  }
+
+  @media ${device.tablet} {
+    font-size: 1rem;
   }
 `
 

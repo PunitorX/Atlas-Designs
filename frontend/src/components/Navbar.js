@@ -26,10 +26,8 @@ const NavLogo = styled.div`
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   color: #fff;
-  padding: 0 1rem;
 
   @media ${device.mobileM} {
-    padding-left: 0;
     font-size: 1.4rem;
   }
 `
@@ -80,7 +78,7 @@ const NavLink = styled(Link)`
   }
 
   @media ${device.tabletP} {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   &.link {
@@ -103,8 +101,9 @@ const NavUser = styled.div`
     color: #EDA920;
   }
 
-  @media ${device.tabletP} {
-    font-size: 1.2rem;
+  @media ${device.tablet} {
+    font-size: 1rem;
+    padding: 1rem;
   }
 
   @media ${device.mobileM} {
@@ -135,6 +134,7 @@ const MenuIcon = styled.div`
   @media ${device.tabletP} {
     display: block;
     color: #fff;
+    font-size: .9rem;
   }
  
   @media ${device.tablet} {
