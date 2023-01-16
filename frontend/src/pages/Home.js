@@ -10,6 +10,20 @@ const Body = styled.body`
   height: auto;
   margin: 0 2rem;
   padding: 1rem 2rem;
+
+  @media ${device.mobileL} {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+
+  @media ${device.mobileM} {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+
+  @media ${device.mobileS} {
+    padding: 1rem .5rem;
+  }
 `
 
 const BodyContainer = styled.div`
@@ -25,18 +39,16 @@ const SectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media ${device.tabletP} {
-    font-size: 1.6rem;
-  }
-
-  @media ${device.mobileL} {
-    font-size: 12px;
-  }
-
   @media ${device.mobileM} {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @media ${device.mobileS} {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
   }
 `
 
@@ -47,12 +59,16 @@ const SectionTitle = styled.h2`
   text-transform: uppercase;
   letter-spacing: 1px;
 
-  @media ${device.tabletP} {
-    font-size: 2rem;
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.mobileM} {
     font-size: 1.4rem;
+  }
+
+  @media ${device.mobileS} {
+    font-size: 1.2rem;
   }
 `
 const SectionView = styled.a`
@@ -78,6 +94,18 @@ const SectionView = styled.a`
 
   @media ${device.tablet} {
     font-size: 1rem;
+  }
+
+  @media ${device.mobileL} {
+    font-size: .8rem;
+  }
+
+  @media ${device.mobileM} {
+    font-size: .8rem;
+  }
+
+  @media ${device.mobileS} {
+    font-size: .8rem;
   }
 `
 

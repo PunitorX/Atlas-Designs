@@ -19,6 +19,21 @@ const NavContainer = styled.div`
   justify-content: space-between;
   margin: 0 2rem;
   padding: 0 2rem;
+
+  @media ${device.mobileL} {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+
+  @media ${device.mobileM} {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+
+  @media ${device.mobileS} {
+   padding: 0 1rem;
+   margin: 0 1rem;
+  }
 `
 
 const NavLogo = styled.div`
@@ -26,6 +41,10 @@ const NavLogo = styled.div`
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   color: #fff;
+
+  @media ${device.mobileL} {
+    font-size: 1.6rem;
+  }
 
   @media ${device.mobileM} {
     font-size: 1.4rem;
@@ -41,15 +60,13 @@ const NavList = styled.ul`
   padding: 0;
 
   @media ${device.tabletP} {
-    /* display: none; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 1rem;
   }
 
   @media ${device.mobileL} {
-    display: none;
+    display: flex;
   }
 `
 
@@ -86,6 +103,10 @@ const NavLink = styled(Link)`
       display: none;
     }
   }
+
+  @media ${device.mobileL} {
+    font-size: 1.1rem;
+  }
 `
 
 const NavUser = styled.div`
@@ -106,7 +127,15 @@ const NavUser = styled.div`
     padding: 1rem;
   }
 
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
+
   @media ${device.mobileM} {
+    font-size: 1rem;
+  }
+
+  @media ${device.mobileS} {
     font-size: 1rem;
   }
 `
@@ -142,13 +171,13 @@ const MenuIcon = styled.div`
     color: #fff;
   }
 
-  @media ${device.mobileM} {
-    font-size: .8rem;
-  }
-
   @media ${device.mobileL} {
     display: block;
     color: #fff;
+  }
+
+  @media ${device.mobileM} {
+    font-size: .8rem;
   }
 `
 
@@ -221,7 +250,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           </NavItem>
           <NavItem>
             <NavUser>
-              <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
+              <FontAwesomeIcon icon={faCircleUser} size={'lg'}/>
               <NavLogin>Login <span>/ Register</span></NavLogin> 
               {/* Will need to be a ternary for login verification */}
             </NavUser>
