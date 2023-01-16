@@ -11,10 +11,6 @@ const Search = styled.div`
     align-items: center;
   }
 
-  @media ${device.tablet} {
-    /* display: none; */
-  }
-
   @media ${device.mobileL} {
     display: none;
   }
@@ -37,7 +33,7 @@ const SearchInput = styled.input`
   }
   
   @media ${device.tabletP} {
-    width: 325px;
+    width: 400px;
   }
 
   @media ${device.tablet} {

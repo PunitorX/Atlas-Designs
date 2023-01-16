@@ -11,6 +11,10 @@ const Body = styled.body`
   margin: 0 2rem;
   padding: 1rem 2rem;
 
+  @media ${device.tabletP} {
+    padding: 0 1rem;
+  }
+
   @media ${device.mobileL} {
     padding: 0 1rem;
     margin: 0 1rem;
