@@ -21,7 +21,7 @@ const Search = styled.div`
 `
 
 const SearchInput = styled.input`
-  width: 525px;
+  width: 425px;
   height: 25px;
   padding: .5rem 1rem;
   font-size: 14px;
