@@ -9,7 +9,7 @@ import { device } from '../DeviceSize'
 const Body = styled.body`
   height: auto;
   margin: 0 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
 `
 
 const BodyContainer = styled.div`

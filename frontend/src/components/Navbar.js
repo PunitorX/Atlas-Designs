@@ -18,7 +18,7 @@ const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 2rem;
-  padding-right: 1rem;
+  padding: 0 2rem;
 `
 
 const NavLogo = styled.div`
@@ -96,7 +96,6 @@ const NavUser = styled.div`
   align-items: center;
   gap: 10px;
   font-size: 1rem;
-  padding: 1rem;
   cursor: pointer;
 
   &:hover {
