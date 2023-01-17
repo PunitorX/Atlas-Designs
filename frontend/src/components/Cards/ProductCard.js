@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { CartContext } from '../../CartContext'
 import { productArray } from '../../Data/ProductData'
 import { device } from '../../DeviceSize'
+import StarRating from '../StarRating'
 
 const Card = styled.div`
   margin: .5rem 0;
@@ -37,6 +38,10 @@ const ProductRating = styled.div`
 
 `
 
+const StarRateCount = styled.div`
+
+`
+
 const ProductPrice = styled.div`
 
 `
@@ -58,8 +63,10 @@ function ProductCard() {
             <CardContainer>
               <ProductContainer>
                 <ProductName>{product.item}</ProductName>
-                <ProductRating></ProductRating>
-                <ProductPrice>{product.price}</ProductPrice>
+                <ProductRating>
+                  <StarRating value={product.value}/><StarRateCount>({product.ratingCount})</StarRateCount>
+                </ProductRating>
+                <ProductPrice>${product.price.toFixed(2)}</ProductPrice>
               </ProductContainer>
               <CardImage>
                 {product.img}

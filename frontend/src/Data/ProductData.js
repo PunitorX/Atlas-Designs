@@ -6,27 +6,39 @@ import imgFour from '../Images/RyzenFive.jpg'
 const productArray = [
   {
     id: '1',
-    price: 500.00,
+    price: 549.00,
     item: 'EVGA GeForce RTX 3070 Ti FTW3 Ultra Gaming Video Card',
-    img: imgOne
+    img: imgOne,
+
+    value: 3,
+    ratingCount: '83'
   },
   {
     id: '2',
     price: 139.00,
     item: 'AMD Ryzen 5 5600G - Ryzen 5 5000 G-Series Cezanne 6-Core 3.9 GHz AM$ 65W AMD Radeon Graphics Desktop Processor',
-    img: imgTwo
+    img: imgTwo,
+
+    value: 1,
+    ratingCount: '436'
   },
   {
     id: '3',
     price: 189.00,
     item: 'ASUS ROG STRIX B550-F GAMING AM$ AMD B550 SATA 6Gb/s ATX AMD Motherboard',
-    img: imgThree
+    img: imgThree,
+
+    value: 5,
+    ratingCount: '26'
   },
   {
     id: '4',
     price: 89.00,
     item: 'Corsair LL Series CO-9050072-WW LL120 RGB, 120mm Dual Light Loop RGB LED PWM Fan, 3 Fan Pack with Lighting Node PRO',
-    img: imgFour
+    img: imgFour,
+
+    value: 2,
+    ratingCount: '148'
   }
 ]
 
