@@ -97,7 +97,7 @@ const NavLink = styled(Link)`
   }
 
   @media ${device.laptop} {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   &.link {
@@ -107,7 +107,7 @@ const NavLink = styled(Link)`
   }
 
   @media ${device.tablet} {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 `
 
@@ -126,11 +126,6 @@ const NavUser = styled.div`
 
   @media ${device.laptop} {
     padding: 1rem;
-    font-size: 1.3rem;
-  }
-
-  @media ${device.tablet} {
-    font-size: 1.4rem;
   }
 `
 
@@ -153,6 +148,7 @@ const MenuIcon = styled.div`
   @media ${device.laptop} {
     display: block;
     color: #fff;
+    /* font-size:.8rem; */
   }
  
   @media ${device.tablet} {
