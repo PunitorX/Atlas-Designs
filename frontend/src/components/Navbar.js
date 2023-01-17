@@ -124,9 +124,9 @@ const NavUser = styled.div`
     color: #EDA920;
   }
 
-  @media ${device.tabletP} {
+  @media ${device.laptop} {
     padding: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   @media ${device.tablet} {
@@ -138,11 +138,7 @@ const NavLogin = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${device.tabletP} {
-    display: none;
-  }
-
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: none;
   }
 `
@@ -154,10 +150,9 @@ const NavRegister = styled.div`
 const MenuIcon = styled.div`
   display: none;
   
-  @media ${device.tabletP} {
+  @media ${device.laptop} {
     display: block;
     color: #fff;
-    font-size: 1.4rem;
   }
  
   @media ${device.tablet} {
