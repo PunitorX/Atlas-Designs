@@ -73,8 +73,12 @@ const NavList = styled.ul`
     align-items: center;
   }
 
+  @media ${device.tablet} {
+    margin-right: 1rem;
+  }
+
   @media ${device.mobileL} {
-    display: flex;
+    margin: 0;
   }
 `
 
@@ -112,6 +116,10 @@ const NavLink = styled(Link)`
     }
   }
 
+  @media ${device.tablet} {
+    font-size: 1.3rem;
+  }
+
   @media ${device.mobileL} {
     font-size: 1.1rem;
   }
@@ -136,7 +144,7 @@ const NavUser = styled.div`
   }
 
   @media ${device.tablet} {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   @media ${device.mobileL} {
@@ -181,11 +189,13 @@ const MenuIcon = styled.div`
   @media ${device.tablet} {
     display: block;
     color: #fff;
+    font-size: 1rem;
   }
 
   @media ${device.mobileL} {
     display: block;
     color: #fff;
+    font-size: 1rem;
   }
 
   @media ${device.mobileM} {

@@ -8,7 +8,9 @@ const Search = styled.div`
 
   @media ${device.tabletP} {
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 500px;
   }
 
   @media ${device.mobileL} {
