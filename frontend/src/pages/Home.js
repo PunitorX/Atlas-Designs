@@ -133,9 +133,9 @@ const Home = () => {
           </SectionHeader>
           <SectionCard>
             <ProductCard />
+            {/* <ProductCard />
             <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard /> */}
             {/* <ProductCard />
             <ProductCard /> */}
           </SectionCard>

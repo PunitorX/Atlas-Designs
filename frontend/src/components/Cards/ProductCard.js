@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../CartContext'
+import { productArray } from '../../Data/ProductData'
 import { device } from '../../DeviceSize'
 
 const Card = styled.div`
@@ -48,26 +49,24 @@ const Image = styled.img`
 
 `
 
-function ProductCard(props) {
-  const product = props.product;
-  const cart = useContext(CartContext)
-  console.log(cart.items)
+function ProductCard() {
 
   return (
     <>
-    <Card>
-      <CardContainer>
-        <ProductContainer>
-          <ProductName></ProductName>
-          <ProductRating>
-          </ProductRating>
-          <ProductPrice></ProductPrice>
-        </ProductContainer>
-        <CardImage>
-          <Image />
-        </CardImage>
-      </CardContainer>   
-    </Card>
+        {productArray.map((product) => (
+          <Card>
+            <CardContainer>
+              <ProductContainer>
+                <ProductName>{product.item}</ProductName>
+                <ProductRating></ProductRating>
+                <ProductPrice>{product.price}</ProductPrice>
+              </ProductContainer>
+              <CardImage>
+                {product.img}
+              </CardImage>
+            </CardContainer>   
+          </Card>
+        ))}
     </>
   )
 }
