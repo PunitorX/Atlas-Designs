@@ -11,7 +11,7 @@ const Body = styled.body`
   margin: 0 2rem;
   padding: 1rem 2rem;
 
-  @media ${device.tabletP} {
+  @media ${device.laptop} {
     padding: 0 1rem;
   }
 
