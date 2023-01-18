@@ -3,50 +3,45 @@ import styled from 'styled-components'
 import { CartContext } from '../../CartContext'
 import { productArray } from '../../Data/ProductData'
 import { device } from '../../DeviceSize'
+import ButtonThree from '../Buttons/ButtonThree'
+import ButtonTwo from '../Buttons/ButtonTwo'
 import StarRating from '../StarRating'
 
 const Card = styled.div`
   margin: .5rem 0;
   height: 300px;
-  width: 450px;
+  width: 400px;
   background-color: #2C3333;
   border-radius: 10px;
-
-  /* @media ${device.tablet} {
-    height: 325px;
-    width: 100%;
-  }
-
-  @media ${device.mobileM} {
-    height: 250px;
-  } */
+  padding: 1rem;
 `
 
 const CardContainer = styled.div`
   color: #fff;
+  height: inherit;
+`
+
+const TopHalf = styled.div`
+  height: 75%;
   display: flex;
-  flex-direction: row-reverse;
 `
 
 const CardImage = styled.div`
-  background-color: #fff;
+
 `
 
 const Image = styled.img`
-  width: 200px;
+  width: 175px;
   height: auto;
-  display: block;
-  margin: 0 auto;
 `
 
 const ProductContainer = styled.div`
-  /* display: block;
-  margin: 0 auto;
-  width: 400px; */
+  height: 100%;
+  padding: 0 1rem;
 `
 
 const ProductName = styled.a`
-
+  
 `
 
 const ProductRating = styled.div`
@@ -62,6 +57,11 @@ const ProductPrice = styled.div`
 
 `
 
+const CardButtons = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
 function ProductCard() {
 
   return (
@@ -69,17 +69,23 @@ function ProductCard() {
         {productArray.map((product) => (
           <Card>
             <CardContainer>
-              <CardImage>
-                <Image src={product.img}/>
-              </CardImage>
-              <ProductContainer>
-                <ProductName to='/'>{product.item}</ProductName>
-                <ProductRating>
-                  <StarRating value={product.value}/>
-                  <StarRateCount>({product.ratingCount})</StarRateCount>
-                </ProductRating>
-                <ProductPrice>${product.price.toFixed(2)}</ProductPrice>
-              </ProductContainer>
+              <TopHalf>
+                <CardImage>
+                  <Image src={product.img}/>
+                </CardImage>
+                <ProductContainer>
+                  <ProductName to='/'>{product.item}</ProductName>
+                  <ProductRating>
+                    <StarRating value={product.value}/>
+                    <StarRateCount>({product.ratingCount})</StarRateCount>
+                  </ProductRating>
+                  <ProductPrice>${product.price.toFixed(2)}</ProductPrice>
+                </ProductContainer>
+              </TopHalf>
+              <CardButtons>
+                  <ButtonTwo></ButtonTwo>
+                  <ButtonThree></ButtonThree>
+              </CardButtons>
             </CardContainer>   
           </Card>
         ))}
