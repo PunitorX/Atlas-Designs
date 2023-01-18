@@ -9,7 +9,7 @@ import StarRating from '../StarRating'
 
 const Card = styled.div`
   margin: .5rem 0;
-  height: 300px;
+  height: 250px;
   width: 400px;
   background-color: #2C3333;
   border-radius: 10px;
@@ -22,12 +22,16 @@ const CardContainer = styled.div`
 `
 
 const TopHalf = styled.div`
-  height: 75%;
+  height: 210px;
   display: flex;
 `
 
-const CardImage = styled.div`
-
+const ImageContainer = styled.div`
+  background-color: #fff;
+  height: 175px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
 `
 
 const Image = styled.img`
@@ -41,16 +45,16 @@ const ProductContainer = styled.div`
 `
 
 const ProductName = styled.a`
-  
 `
 
 const ProductRating = styled.div`
   display: flex;
   align-items: center;
+  padding: 0.5rem 0;
 `
 
 const StarRateCount = styled.div`
-
+  font-size: .8rem;
 `
 
 const ProductPrice = styled.div`
@@ -70,9 +74,9 @@ function ProductCard() {
           <Card>
             <CardContainer>
               <TopHalf>
-                <CardImage>
+                <ImageContainer>
                   <Image src={product.img}/>
-                </CardImage>
+                </ImageContainer>
                 <ProductContainer>
                   <ProductName to='/'>{product.item}</ProductName>
                   <ProductRating>
