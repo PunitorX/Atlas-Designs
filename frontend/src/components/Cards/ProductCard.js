@@ -32,7 +32,6 @@ const ImageContainer = styled.div`
   border-radius: 10px;
   display: flex;
   align-items: center;
-  /* margin: 1rem 0; */
 `
 
 const Image = styled.img`
@@ -89,8 +88,8 @@ function ProductCard() {
                 </ProductContainer>
               </TopHalf>
               <CardButtons>
-                  <ButtonTwo></ButtonTwo>
-                  <ButtonTwo></ButtonTwo>
+                  <ButtonTwo>View</ButtonTwo>
+                  <ButtonTwo>Explore</ButtonTwo>
               </CardButtons>
             </CardContainer>   
           </Card>
