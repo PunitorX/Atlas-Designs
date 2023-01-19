@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { CartContext } from '../../CartContext'
 import { productArray } from '../../Data/ProductData'
 import { device } from '../../DeviceSize'
-import ButtonThree from '../Buttons/ButtonThree'
 import ButtonTwo from '../Buttons/ButtonTwo'
 import StarRating from '../StarRating'
 
@@ -14,6 +13,7 @@ const Card = styled.div`
   background-color: #2C3333;
   border-radius: 10px;
   padding: 1rem;
+  letter-spacing: 1.2px;
 `
 
 const CardContainer = styled.div`
@@ -28,10 +28,11 @@ const TopHalf = styled.div`
 
 const ImageContainer = styled.div`
   background-color: #fff;
-  height: 175px;
+  height: 200px;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  /* margin: 1rem 0; */
 `
 
 const Image = styled.img`
@@ -62,6 +63,7 @@ const ProductPrice = styled.div`
 `
 
 const CardButtons = styled.div`
+  padding-top: 1rem;
   display: flex;
   justify-content: space-evenly;
 `
@@ -88,7 +90,7 @@ function ProductCard() {
               </TopHalf>
               <CardButtons>
                   <ButtonTwo></ButtonTwo>
-                  <ButtonThree></ButtonThree>
+                  <ButtonTwo></ButtonTwo>
               </CardButtons>
             </CardContainer>   
           </Card>
