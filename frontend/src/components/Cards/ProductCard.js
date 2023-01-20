@@ -8,7 +8,7 @@ import StarRating from '../StarRating'
 
 const Card = styled.div`
   margin: .5rem 0;
-  height: 250px;
+  height: 270px;
   width: 400px;
   background-color: #2C3333;
   border-radius: 10px;
@@ -62,7 +62,7 @@ const ProductPrice = styled.div`
 `
 
 const CardButtons = styled.div`
-  padding-top: 1rem;
+  padding-top: .5rem;
   display: flex;
   justify-content: space-evenly;
 `
@@ -88,7 +88,7 @@ function ProductCard() {
                 </ProductContainer>
               </TopHalf>
               <CardButtons>
-                  <ButtonTwo>View</ButtonTwo>
+                  <ButtonTwo to="/Products">View</ButtonTwo>
                   <ButtonTwo>Explore</ButtonTwo>
               </CardButtons>
             </CardContainer>   

@@ -3,32 +3,26 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const ButtonContainer = styled.div`
-  color: red;
   transition-property: all;
   transition-duration: .6s;
   transition-timing-function: ease;
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
+  font-size: .8rem;
   background: rgba(#fff, 0);
-  border-bottom: 1px solid;
-  color: red;
-  line-height: 1.4;
-  padding: .25em;
+  padding: 1rem 2rem;
   text-decoration: none;
+  width: 200px;
     
   &:hover {
     background: rgba(#fff, 1);
-    color: red;
   }
 
   &.btn {
-    color: red;
+    color: #fff;
     cursor: pointer;
-    font-size:16px;
-    font-weight: 400;
     line-height: 45px;
-    margin: 0 0 2em;
     max-width: 160px; 
     position: relative;
     text-decoration: none;
@@ -36,19 +30,15 @@ const Button = styled.a`
     width: 100%; 
 
     &:hover {
-      text-decoration: none;
+      font-weight: bold;
     }
   }
 
   &.btn-1 {
-    background: darkgreen(red, 1.5%);
-    font-weight: 100;
-
     svg {
       height: 45px;
       left: 0;
       position: absolute;
-      top: 0;
       width: 100%;
     }
 
@@ -57,14 +47,10 @@ const Button = styled.a`
       stroke: #fff;
       stroke-width: 2;
       stroke-dasharray: 422, 0;
-      transition: all 0.35s linear;
+      transition: all .75s linear;
     }
 
     &:hover {
-      background: rgba(red, 0);
-      font-weight: 900;
-      letter-spacing: 1px;
-
       rect {
         stroke-width: 5;
         stroke-dasharray: 15, 310;
@@ -75,10 +61,10 @@ const Button = styled.a`
   }
 `
 
-function ButtonTwo({children, onClick}) {
+function ButtonTwo({children, onClick, to}) {
   return (
     <ButtonContainer>
-      <Button className='btn btn-1' onClick={onClick}>
+      <Button className='btn btn-1' onClick={onClick} to={to}>
       <svg>
         <rect x="0" y="0" fill="none" width="100%" height="100%"/>
       </svg>
