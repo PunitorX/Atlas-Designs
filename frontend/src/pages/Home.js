@@ -1,16 +1,14 @@
+import React, { useEffect, useRef } from 'react'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
 import styled from 'styled-components'
 import BuildCard from '../components/Cards/BuildCard'
 import ProductCard from '../components/Cards/ProductCard'
-import { productArray } from '../Data/ProductData'
 import { device } from '../DeviceSize'
+import Video from '../Videos/homeVideo.mp4'
 
 const Body = styled.body`
   height: auto;
-  margin: 0 2rem;
-  padding: 0 2rem;
 
   @media ${device.laptop} {
     padding: 0 1rem;
@@ -31,12 +29,10 @@ const Body = styled.body`
   }
 `
 
-const BodyContainer = styled.div`
-  
-`
-
 const BodySection = styled.section`
   height: auto;
+  margin: 0 2rem;
+  padding: 0 2rem;
 `
 
 const SectionHeader = styled.div`
@@ -120,10 +116,44 @@ const SectionCard = styled.div`
   flex-wrap: wrap;
 `
 
-const Home = () => {
+const VideoMedia = styled.div`
+  height: 550px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+`
+
+const VideoContainer = styled.video`
+  object-fit: fill;
+  width: 100%;
+  height: inherit;
+`
+
+const Home = ({src, isMuted}) => {
+  const refVideo = useRef(null)
+
+  useEffect(() => {
+    if(!refVideo.current) {
+      return
+    }
+
+    if(isMuted) {
+      //open bug since 2017 that you cannot set muted in video element https://github.com/facebook/react/issues/10389
+      refVideo.current.defaultMuted = true
+      refVideo.current = true
+    }
+
+    refVideo.current.srcObject = src
+  }, [src])
+
   return (
     <Body>
-      <BodyContainer>
+        <VideoMedia>
+          <VideoContainer autoPlay ref={refVideo} muted  loop>
+            <source src={Video} type='video/mp4'/>
+          </VideoContainer>
+        </VideoMedia>
+
         <BodySection>
           <SectionHeader>
             <SectionTitle>Trending Parts</SectionTitle>
@@ -152,15 +182,14 @@ const Home = () => {
 
         <BodySection>
           <SectionHeader>
-            <SectionTitle>Our Best Deals</SectionTitle>
-            <SectionView>
-              View More
-              <FontAwesomeIcon icon={faAngleRight} size={'xs'} transform={'down-2, right-2'}/>
-            </SectionView>
-          </SectionHeader>
-        </BodySection>
-      </BodyContainer>
-    </Body>
+          <SectionTitle>Our Best Deals</SectionTitle>
+          <SectionView>
+            View More
+            <FontAwesomeIcon icon={faAngleRight} size={'xs'} transform={'down-2, right-2'}/>
+          </SectionView>
+        </SectionHeader>
+      </BodySection>
+  </Body>
   )
 }
 
