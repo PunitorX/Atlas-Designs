@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const Button = styled(Link)`
-  font-size: .8rem;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
   text-decoration: none;
     
   &:hover {
