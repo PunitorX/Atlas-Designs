@@ -2,6 +2,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
+import BuildCard from '../components/Cards/BuildCard'
 import ProductCard from '../components/Cards/ProductCard'
 import { productArray } from '../Data/ProductData'
 import { device } from '../DeviceSize'
@@ -133,11 +134,6 @@ const Home = () => {
           </SectionHeader>
           <SectionCard>
             <ProductCard />
-            {/* <ProductCard />
-            <ProductCard />
-            <ProductCard /> */}
-            {/* <ProductCard />
-            <ProductCard /> */}
           </SectionCard>
         </BodySection>
 
@@ -149,6 +145,9 @@ const Home = () => {
               <FontAwesomeIcon icon={faAngleRight} size={'xs'} transform={'down-2, right-2'}/>
             </SectionView>
           </SectionHeader>
+          <SectionCard>
+            {/* <BuildCard /> */}
+          </SectionCard>
         </BodySection>
 
         <BodySection>
