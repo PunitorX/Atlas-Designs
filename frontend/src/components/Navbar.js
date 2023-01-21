@@ -6,7 +6,7 @@ import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } f
 import { device } from '../DeviceSize'
 
 const Nav = styled.nav`
-  height: 8vh;
+  height: 10vh;
   background-color: #395B64;
   border-bottom: 2px solid #2C3333;
 `
@@ -39,9 +39,10 @@ const NavContainer = styled.div`
   }
 `
 
-const NavLogo = styled.div`
-  font-size: 2rem;
+const NavLogo = styled.div` 
+  font-size: 2.4rem;
   font-family: 'Lato', sans-serif;
+  letter-spacing: 1.4px;
   font-weight: 600;
   color: #fff;
 
@@ -193,7 +194,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
       <NavContainer>
 
         <NavLogo>
-          AD
+          Atlas Designs
         </NavLogo>
 
         <NavList> 
