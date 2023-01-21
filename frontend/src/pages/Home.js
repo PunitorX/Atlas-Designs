@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import BuildCard from '../components/Cards/BuildCard'
 import ProductCard from '../components/Cards/ProductCard'
 import { device } from '../DeviceSize'
+import { color } from '../GlobalColors'
 import Video from '../Videos/homeVideo.mp4'
 
 const Body = styled.body`
@@ -54,7 +55,7 @@ const SectionHeader = styled.div`
 `
 
 const SectionTitle = styled.h2`
-  color: #2C3333;
+  color: ${color.colorOne};
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.8rem;
   text-transform: uppercase;

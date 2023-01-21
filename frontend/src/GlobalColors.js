@@ -1,7 +1,9 @@
 export const color = {
-  colorOne: '',
-  ColorTwo: '#3E065',
-  ColorThree: '#700B97',
-  ColorFour: '#8E05C2',
-  ColorFive: '',
+  colorOne: '#000',
+  ColorTwo: '#fff',
+  ColorThree: '#2C3333',
+  ColorFour: '#395B64',
+  ColorFive: '#2666CF',
+  ColorSix: '#F5F2E7',
+  ColorSeven: '#EDA920'
 }
