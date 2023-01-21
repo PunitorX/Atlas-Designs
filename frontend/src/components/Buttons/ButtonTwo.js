@@ -2,18 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const ButtonContainer = styled.div`
-  transition-property: all;
-  transition-duration: .6s;
-  transition-timing-function: ease;
-`
-
 const Button = styled(Link)`
   font-size: .8rem;
-  background: rgba(#fff, 0);
-  padding: 1rem 2rem;
   text-decoration: none;
-  width: 200px;
     
   &:hover {
     background: rgba(#fff, 1);
@@ -23,11 +14,11 @@ const Button = styled(Link)`
     color: #fff;
     cursor: pointer;
     line-height: 45px;
-    max-width: 160px; 
+    max-width: 150px; 
     position: relative;
-    text-decoration: none;
     text-transform: uppercase;
     width: 100%; 
+    text-align: center;
 
     &:hover {
       font-weight: bold;
@@ -37,9 +28,9 @@ const Button = styled(Link)`
   &.btn-1 {
     svg {
       height: 45px;
+      width: 150px;
       left: 0;
       position: absolute;
-      width: 100%;
     }
 
     rect {
@@ -63,14 +54,12 @@ const Button = styled(Link)`
 
 function ButtonTwo({children, onClick, to}) {
   return (
-    <ButtonContainer>
-      <Button className='btn btn-1' onClick={onClick} to={to}>
-      <svg>
-        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+    <Button className='btn btn-1' onClick={onClick} to={to} >
+      <svg >
+        <rect x="0" y="0" fill="none" width="100%" height="100%" />
       </svg>
-        {children}
-      </Button>
-    </ButtonContainer>
+      {children}
+    </Button>
 
   )
 }
