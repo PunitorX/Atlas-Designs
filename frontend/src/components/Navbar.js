@@ -8,8 +8,7 @@ import { color } from '../GlobalColors'
 
 const Nav = styled.nav`
   height: 10vh;
-  background-color: #000;
-  border-bottom: 2px solid #2C3333;
+  background-color: ${color.ColorThree};
 `
 
 const NavContainer = styled.div`
@@ -54,6 +53,10 @@ const NavLogo = styled.div`
   @media ${device.mobileM} {
     font-size: 1.4rem;
   }
+
+  span {
+    color: ${color.ColorSeven};
+  }
 `
 
 const NavList = styled.ul`
@@ -94,7 +97,7 @@ const NavLink = styled(Link)`
 
   &:hover {
     transition: all .3s ease-in-out;
-    color: #EDA920;
+    color: ${color.ColorSeven};
   }
 
   @media ${device.laptop} {
@@ -143,25 +146,31 @@ const NavRegister = styled.div`
   
 `
 
+const MenuOverlay = styled.div`
+
+`
+
 const MenuIcon = styled.div`
   display: none;
   
   @media ${device.laptop} {
     display: block;
-    color: #fff;
-    /* font-size:.8rem; */
+    color: ${color.ColorSeven};
+    
   }
  
   @media ${device.tablet} {
     display: block;
-    color: #fff;
+    color: ${color.ColorSeven};
     font-size: 1rem;
+    cursor: pointer;
   }
 
   @media ${device.mobileL} {
     display: block;
-    color: #fff;
+    color: ${color.ColorSeven};
     font-size: 1rem;
+    cursor: pointer;
   }
 `
 
@@ -195,7 +204,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
       <NavContainer>
 
         <NavLogo>
-          Atlas Designs
+          Atlas <span>Designs</span>
         </NavLogo>
 
         <NavList> 
@@ -240,6 +249,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           
         </NavList>
 
+        <MenuOverlay>
         <MenuIcon onClick={handleClick}>
           {click ? 
           <FontAwesomeIcon icon={faTimes} size={'2xl'} />
@@ -247,6 +257,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           <FontAwesomeIcon icon={faBars} size={'2xl'} />
           }
         </MenuIcon>
+        </MenuOverlay>
 
       </NavContainer>
     </Nav>
