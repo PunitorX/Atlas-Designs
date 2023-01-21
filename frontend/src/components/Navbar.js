@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { device } from '../DeviceSize'
@@ -196,8 +195,6 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
         <NavLogo>
           AD
         </NavLogo>
-
-        <SearchBar />     
 
         <NavList> 
           <NavItem>
