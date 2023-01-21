@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { device } from '../DeviceSize'
+import { color } from '../GlobalColors'
 
 const Nav = styled.nav`
   height: 10vh;
-  background-color: #395B64;
+  background-color: #000;
   border-bottom: 2px solid #2C3333;
 `
 
