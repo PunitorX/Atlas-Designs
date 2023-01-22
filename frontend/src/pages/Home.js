@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
@@ -6,7 +6,7 @@ import BuildCard from '../components/Cards/BuildCard'
 import ProductCard from '../components/Cards/ProductCard'
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
-import Video from '../Videos/homeVideo.mp4'
+import Video from '../components/Video'
 
 const Body = styled.body`
   height: auto;
@@ -117,43 +117,11 @@ const SectionCard = styled.div`
   flex-wrap: wrap;
 `
 
-const VideoMedia = styled.div`
-  height: 550px;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-`
-
-const VideoContainer = styled.video`
-  object-fit: fill;
-  width: 100%;
-  height: inherit;
-`
-
-const Home = ({src, isMuted}) => {
-  const refVideo = useRef(null)
-
-  useEffect(() => {
-    if(!refVideo.current) {
-      return
-    }
-
-    if(isMuted) {
-      //open bug since 2017 that you cannot set muted in video element https://github.com/facebook/react/issues/10389
-      refVideo.current.defaultMuted = true
-      refVideo.current = true
-    }
-
-    refVideo.current.srcObject = src
-  }, [src])
-
+const Home = () => {
   return (
     <Body>
-        <VideoMedia>
-          <VideoContainer autoPlay ref={refVideo} muted  loop>
-            <source src={Video} type='video/mp4'/>
-          </VideoContainer>
-        </VideoMedia>
+
+        <Video />
 
         <BodySection>
           <SectionHeader>
