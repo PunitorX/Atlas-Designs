@@ -45,6 +45,7 @@ const NavLogo = styled.div`
   letter-spacing: 1.4px;
   font-weight: 600;
   color: #fff;
+  /* padding: 2rem; */
 
   @media ${device.mobileL} {
     font-size: 1.6rem;
@@ -90,10 +91,17 @@ const NavLink = styled(Link)`
   padding: 1rem;
   text-decoration: none;
   color: #fff;
+  transition: all .3s ease-in-out;
 
-  /* &:nth-child(1):hover {
-    color: red;
-  } */
+  .red {
+    color: #fff;
+    transition: all .3s ease-in-out;
+     
+     &:hover {
+       color: ${color.ColorEight};
+       transition: all .3s ease-in-out;
+     }
+   }
 
   &:hover {
     transition: all .3s ease-in-out;
@@ -122,10 +130,12 @@ const NavUser = styled.div`
   gap: 10px;
   font-size: 1rem;
   cursor: pointer;
+  padding-left: 1rem;
+  transition: all .3s ease-in-out;
 
   &:hover {
     transition: all .3s ease-in;
-    color: #EDA920;
+    color: ${color.ColorSeven};
   }
 
   @media ${device.laptop} {
@@ -143,14 +153,53 @@ const NavLogin = styled.div`
 `
 
 const NavRegister = styled.div`
-  
+  // for login ternary
 `
 
 const MenuOverlay = styled.div`
+  height: 50px;
+  width: 50px;
+  position: relative;
+  display: none;
 
+  &:before, 
+  &:after {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+
+  &:hover::before,
+  &:hover::after  {
+    transform: (1);
+    opacity: .2;
+  }
+ 
+  @media ${device.tablet} {
+    display: block;
+  }
+
+  @media ${device.mobileL} {
+    display: block;
+  }
 `
 
 const MenuIcon = styled.div`
+  color: ${color.ColorSeven};
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition-delay: 0.1s;
   display: none;
   
   @media ${device.laptop} {
@@ -209,16 +258,6 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <NavList> 
           <NavItem>
-            <NavLink>
-              <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
-            </NavLink>
-          </NavItem>
-          <NavItem>
             <NavLink className='link'>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}/>
@@ -239,24 +278,36 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
               {itemFour}
             </NavLink>
           </NavItem>
+        </NavList>
+
+        <NavList>
+          <NavItem>
+            <NavLink>
+              <FontAwesomeIcon className='red' icon={faHeart} size={'xl'}/>                       
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink>
+              <FontAwesomeIcon icon={faShoppingCart} size={'xl'}/>
+            </NavLink>
+          </NavItem>
           <NavItem>
             <NavUser>
-              <FontAwesomeIcon icon={faCircleUser} size={'lg'}/>
+              <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
               <NavLogin>Login <span>/ Register</span></NavLogin> 
               {/* Will need to be a ternary for login verification */}
             </NavUser>
           </NavItem>
-          
         </NavList>
 
         <MenuOverlay>
-        <MenuIcon onClick={handleClick}>
-          {click ? 
-          <FontAwesomeIcon icon={faTimes} size={'2xl'} />
-          : 
-          <FontAwesomeIcon icon={faBars} size={'2xl'} />
-          }
-        </MenuIcon>
+          <MenuIcon onClick={handleClick}>
+            {click ? 
+            <FontAwesomeIcon icon={faTimes} size={'2xl'} />
+            : 
+            <FontAwesomeIcon icon={faBars} size={'2xl'} />
+            }
+          </MenuIcon>
         </MenuOverlay>
 
       </NavContainer>
