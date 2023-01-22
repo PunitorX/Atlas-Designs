@@ -65,7 +65,7 @@ const NavList = styled.ul`
   letter-spacing: 1.2px;
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0;
 
   @media ${device.tablet} {
@@ -283,12 +283,12 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
         <NavList>
           <NavItem>
             <NavLink>
-              <FontAwesomeIcon className='red' icon={faHeart} size={'xl'}/>                       
+              <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink>
-              <FontAwesomeIcon icon={faShoppingCart} size={'xl'}/>
+              <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
             </NavLink>
           </NavItem>
           <NavItem>
