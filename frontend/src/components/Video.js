@@ -1,18 +1,43 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import VideoII from '../../src/Videos/videoTwo.mp4'
+import SearchBar from './SearchBar'
+import VideoChip from './VideoChip'
 
-const VideoMedia = styled.div`
+const VideoMedia = styled.section`
   height: 550px;
   width: 100%;
   padding: 0;
   margin: 0;
 `
 
+const VideoOverlay = styled.div`
+  height: inherit;
+  width: 100%;
+  position: relative;
+  display: block;
+`
+
 const VideoContainer = styled.video`
   object-fit: fill;
   width: 100%;
   height: inherit;
+  position: absolute;
+`
+
+const VideoContent = styled.div`
+  height: inherit;
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const VideoChips = styled.div`
+  color: #fff;
 `
 
 function Video({src, isMuted}) {
@@ -34,9 +59,24 @@ function Video({src, isMuted}) {
 
  return (
     <VideoMedia>
-        <VideoContainer autoPlay ref={refVideo} muted  loop>
-        <source src={VideoII} type='video/mp4'/>
-        </VideoContainer>
+        <VideoOverlay>
+          <VideoContainer autoPlay ref={refVideo} muted  loop>
+            <source src={VideoII} type='video/mp4'/>
+          </VideoContainer>
+
+          <VideoContent>
+            <VideoChips>
+              <VideoChip />
+              <VideoChip />
+              <VideoChip />
+              <VideoChip />
+              <VideoChip />
+              <VideoChip />
+            </VideoChips>
+            <SearchBar />
+          </VideoContent>
+
+        </VideoOverlay>
     </VideoMedia>
   )
 }

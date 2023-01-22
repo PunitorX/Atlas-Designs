@@ -5,17 +5,8 @@ import styled from 'styled-components'
 import { device } from '../DeviceSize'
 
 const Search = styled.div`
+  z-index: 999;
 
-  @media ${device.tabletP} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-  }
-
-  @media ${device.mobileL} {
-    display: none;
-  }
 `
 
 const SearchInput = styled.input`
