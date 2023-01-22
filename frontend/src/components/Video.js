@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import VideoI from '../../src/Videos/videoTwo.mp4'
+import VideoII from '../../src/Videos/videoTwo.mp4'
 
 const VideoMedia = styled.div`
   height: 550px;
@@ -35,7 +35,7 @@ function Video({src, isMuted}) {
  return (
     <VideoMedia>
         <VideoContainer autoPlay ref={refVideo} muted  loop>
-        <source src={VideoI} type='video/mp4'/>
+        <source src={VideoII} type='video/mp4'/>
         </VideoContainer>
     </VideoMedia>
   )
