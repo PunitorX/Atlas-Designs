@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import VideoI from '../../src/Videos/homeVideo.mp4'
+import VideoI from '../../src/Videos/videoTwo.mp4'
 
 const VideoMedia = styled.div`
   height: 550px;
