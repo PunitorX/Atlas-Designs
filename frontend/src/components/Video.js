@@ -33,8 +33,9 @@ const VideoContent = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  margin-top: 3rem;
 `
 
 const VideoChips = styled.div`
@@ -44,12 +45,24 @@ const VideoChips = styled.div`
   padding-bottom: 2rem;
 `
 
-const VideoHeader = styled.h1`
-  font-size: 1.8rem;
+const VideoHeaders = styled.section`
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.4px;
   color: ${color.ColorTwo};
+  margin: 0 10rem;
+  padding: 0 10rem;
+`
+
+const VideoHeader = styled.h1`
+  font-size: 1.8rem;
+  letter-spacing: 1.4px;
+`
+
+const VideoHeaderTwo = styled.h3`
+  font-weight: 200;
+  padding: 0 3rem;
+  line-height: 35px;
+  /* letter-spacing: 1px; */
 `
 
 function Video({src, isMuted}) {
@@ -85,9 +98,16 @@ function Video({src, isMuted}) {
               <VideoChip />
               <VideoChip />
             </VideoChips>
-            <VideoHeader>
-              Build your dream computer
-            </VideoHeader>
+            <VideoHeaders>
+              <VideoHeader>
+                Build your dream computer
+              </VideoHeader>
+              <VideoHeaderTwo>
+              Millions of designers and agencies around the world showcase their portfolio work on Dribbble - the home to the world’s best design and creative professionals.
+
+              </VideoHeaderTwo>
+            </VideoHeaders>
+            
             <SearchBar />
           </VideoContent>
 
