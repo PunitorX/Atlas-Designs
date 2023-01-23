@@ -33,15 +33,14 @@ const VideoContent = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  margin-top: 3rem;
 `
 
 const VideoChips = styled.div`
   color: #fff;
   display: flex;
   gap: 25px;
+  padding-top: 3rem;
   padding-bottom: 2rem;
 `
 
@@ -59,10 +58,11 @@ const VideoHeader = styled.h1`
 `
 
 const VideoHeaderTwo = styled.h3`
+  font-size: 1.2rem;
   font-weight: 200;
-  padding: 0 3rem;
+  padding: 0 5rem;
   line-height: 35px;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
 `
 
 function Video({src, isMuted}) {
@@ -103,7 +103,7 @@ function Video({src, isMuted}) {
                 Build your dream computer
               </VideoHeader>
               <VideoHeaderTwo>
-              Explore through endless parts and assecories to suit your needs and desires for you personal computer. Build the computer you've always dreamed about.
+              Explore through endless parts and accessories to suit your needs and desires for your personal computer. Build the computer you've always dreamed about.
               </VideoHeaderTwo>
             </VideoHeaders>
             
