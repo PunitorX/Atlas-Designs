@@ -38,6 +38,9 @@ const VideoContent = styled.div`
 
 const VideoChips = styled.div`
   color: #fff;
+  display: flex;
+  gap: 25px;
+  padding-bottom: 2rem;
 `
 
 function Video({src, isMuted}) {
