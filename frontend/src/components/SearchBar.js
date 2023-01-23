@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { device } from '../DeviceSize'
 
 const Search = styled.div`
-  z-index: 999;
 
 `
 
