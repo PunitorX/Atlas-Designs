@@ -103,8 +103,7 @@ function Video({src, isMuted}) {
                 Build your dream computer
               </VideoHeader>
               <VideoHeaderTwo>
-              Millions of designers and agencies around the world showcase their portfolio work on Dribbble - the home to the world’s best design and creative professionals.
-
+              Explore through endless parts and assecories to suit your needs and desires for you personal computer. Build the computer you've always dreamed about.
               </VideoHeaderTwo>
             </VideoHeaders>
             
