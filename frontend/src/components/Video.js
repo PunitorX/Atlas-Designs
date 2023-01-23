@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import VideoII from '../../src/Videos/videoTwo.mp4'
+import { color } from '../GlobalColors'
 import SearchBar from './SearchBar'
 import VideoChip from './VideoChip'
 
@@ -43,6 +44,14 @@ const VideoChips = styled.div`
   padding-bottom: 2rem;
 `
 
+const VideoHeader = styled.h1`
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.4px;
+  color: ${color.ColorTwo};
+`
+
 function Video({src, isMuted}) {
     const refVideo = useRef(null)
 
@@ -76,6 +85,9 @@ function Video({src, isMuted}) {
               <VideoChip />
               <VideoChip />
             </VideoChips>
+            <VideoHeader>
+              Build your dream computer
+            </VideoHeader>
             <SearchBar />
           </VideoContent>
 
