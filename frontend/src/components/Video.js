@@ -47,7 +47,7 @@ const VideoChips = styled.div`
 
 const VideoHeaders = styled.section`
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   color: ${color.ColorTwo};
   margin: 0 10rem;
   padding: 0 10rem;

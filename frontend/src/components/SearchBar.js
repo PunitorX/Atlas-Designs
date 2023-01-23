@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { device } from '../DeviceSize'
 
 const Search = styled.div`
-
+  padding-top: 1rem;
 `
 
 const SearchInput = styled.input`
