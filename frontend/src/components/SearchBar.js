@@ -1,7 +1,6 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCancel, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
-import { productArray } from '../Data/ProductData'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { device } from '../DeviceSize'
@@ -11,6 +10,8 @@ const SearchBox = styled.form`
   width: fit-content;
   height: fit-content;
   position: relative;
+`
+const SearchContainer = styled.div`
 `
 
 const SearchInput = styled.input`
@@ -68,26 +69,84 @@ const SearchButton = styled.button`
 }
 `
 
-const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState('')
+const DataResult = styled.div`
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
+const DataValue = styled.a`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: #010C2A;
+  text-decoration: none;
+  &:hover {
+  background-color: lightgrey;
+}
+`
+
+const DataItem = styled.p`
+  margin-left: 10px;
+`
+
+const SearchBar = ({placeholder, data}) => {
+  const [filteredData, setFilteredData] = useState([])
+  const [wordEntered, setWordEntered] = useState('')
+
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    setWordEntered(searchWord)
+    const newFilter = data.filter((value) => {
+      return value.title.toLowerCase().includes(searchWord.toLowerCase())
+    })
+
+    if(searchWord === '') {
+      setFilteredData([])
+    } else {
+      setFilteredData(newFilter)
+    }
   }
 
-  if(searchInput.length > 0) {
-    productArray.filter((product) => {
-      return product.item.match(searchInput)
-    })
+  const clearInput = () => {
+    setFilteredData([])
+    setWordEntered('')
   }
 
   return (
     <SearchBox>
-      <SearchButton>
-        <FontAwesomeIcon icon={faSearch} style={{cursor: 'pointer'}} />
-      </SearchButton>
-      <SearchInput type='text' placeholder={'Search...'} onChange={handleChange} value={searchInput} />
+      <SearchContainer>
+
+        <SearchInput type='text' placeholder={'Search...'} onChange={handleFilter} value={wordEntered} />
+        {filteredData.length === 0 ? (
+            <SearchButton>
+            <FontAwesomeIcon icon={faSearch} style={{cursor: 'pointer'}} />
+            </SearchButton>
+          ) : (
+            <SearchButton>
+            <FontAwesomeIcon icon={faCancel} style={{cursor: 'pointer'}} onClick={clearInput} />
+            </SearchButton>
+          )}  
+
+      </SearchContainer>
+      {filteredData.length !== 0 && (
+        <DataResult>
+          {filteredData.slice(0, 15).map((value, key) => {
+            return (
+              <DataValue href={value.link} target='_blank'>
+                  <DataItem>{value.title}</DataItem>
+              </DataValue>
+            )
+          })}
+        </DataResult>
+      )}
     </SearchBox>
   )
 }

@@ -4,6 +4,7 @@ import VideoII from '../../src/Videos/videoTwo.mp4'
 import { color } from '../GlobalColors'
 import SearchBar from './SearchBar'
 import VideoChip from './VideoChip'
+import BookData from '../Data/Data.json'
 
 const VideoMedia = styled.section`
   height: 550px;
@@ -98,16 +99,16 @@ function Video({src, isMuted}) {
               <VideoChip />
               <VideoChip />
             </VideoChips>
-            <VideoHeaders>
+            {/* <VideoHeaders>
               <VideoHeader>
                 Build your dream computer
               </VideoHeader>
               <VideoHeaderTwo>
               Explore through endless parts and accessories to suit your needs and desires for your personal computer. Build the computer you've always dreamed about.
               </VideoHeaderTwo>
-            </VideoHeaders>
+            </VideoHeaders> */}
             
-            <SearchBar />
+            <SearchBar data={BookData} />
           </VideoContent>
 
         </VideoOverlay>
