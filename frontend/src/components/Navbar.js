@@ -39,12 +39,13 @@ const NavContainer = styled.div`
   }
 `
 
-const NavLogo = styled.div` 
+const NavLogo = styled(Link)` 
   font-size: 2.4rem;
   font-family: 'Lato', sans-serif;
   letter-spacing: 1.4px;
   font-weight: 600;
   color: #fff;
+  text-decoration: none;
   /* padding: 2rem; */
 
   @media ${device.mobileL} {
@@ -123,15 +124,17 @@ const NavLink = styled(Link)`
   }
 `
 
-const NavUser = styled.div`
+const NavUser = styled(Link)`
   color: #fff;
   display: flex;
   align-items: center;
+  text-decoration: none;
   gap: 10px;
   font-size: 1rem;
   cursor: pointer;
   padding-left: 1rem;
   transition: all .3s ease-in-out;
+  
 
   &:hover {
     transition: all .3s ease-in;
@@ -252,29 +255,30 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
     <Nav>
       <NavContainer>
 
-        <NavLogo>
+        <NavLogo to='/'>
           Atlas <span>Designs</span>
         </NavLogo>
 
         <NavList> 
           <NavItem>
-            <NavLink className='link'>
+            <NavLink className='link' to='/Products'>
               {itemOne}
-              <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}/>
+              <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}
+              />
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className='link'>
+            <NavLink className='link' to='/Forum'>
               {itemTwo}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className='link'>
+            <NavLink className='link' to='/Builds'>
               {itemThree}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className='link'>
+            <NavLink className='link' to='/Projects'>
               {itemFour}
             </NavLink>
           </NavItem>
@@ -282,17 +286,17 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <NavList>
           <NavItem>
-            <NavLink>
+            <NavLink to='/WishList'>
               <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>
+            <NavLink to='/Checkout'>
               <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavUser>
+            <NavUser to='/Login'>
               <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
               <NavLogin>Login <span>/ Register</span></NavLogin> 
               {/* Will need to be a ternary for login verification */}

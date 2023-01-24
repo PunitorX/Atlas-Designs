@@ -88,8 +88,8 @@ function ProductCard() {
                 </ProductContainer>
               </TopHalf>
               <CardButtons>
-                  <ButtonTwo to="/Products">View</ButtonTwo>
-                  <ButtonTwo>Explore</ButtonTwo>
+                  <ButtonTwo to="/Product">View</ButtonTwo>
+                  <ButtonTwo to='Products'>Explore</ButtonTwo>
               </CardButtons>
             </CardContainer>   
           </Card>
