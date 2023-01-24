@@ -38,7 +38,6 @@ const VideoContent = styled.div`
 `
 
 const VideoChips = styled.div`
-  color: #fff;
   display: flex;
   gap: 25px;
   padding-top: 3rem;
@@ -48,18 +47,19 @@ const VideoChips = styled.div`
 const VideoHeaders = styled.section`
   text-align: center;
   font-family: 'Roboto Slab', sans-serif;
-  color: ${color.ColorTwo};
   margin: 0 10rem;
   padding: 0 10rem;
 `
 
 const VideoHeader = styled.h1`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   letter-spacing: 1.4px;
   text-transform: capitalize;
+  color: ${color.ColorSeven};
 `
 
 const VideoHeaderTwo = styled.h3`
+  color: ${color.ColorTwo};
   font-size: 1.2rem;
   font-weight: 200;
   padding: 0 5rem;
