@@ -56,6 +56,7 @@ const VideoHeaders = styled.section`
 const VideoHeader = styled.h1`
   font-size: 1.8rem;
   letter-spacing: 1.4px;
+  text-transform: capitalize;
 `
 
 const VideoHeaderTwo = styled.h3`
