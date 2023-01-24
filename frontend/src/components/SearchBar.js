@@ -30,7 +30,7 @@ const SearchInput = styled.input`
   color:#fff;
 
   &::placeholder {
-    color:rgba(255,255,255,.5);
+    color: ${color.ColorTwo};
     font-size: 18px;
     letter-spacing: 2px;
     font-weight: 100;
@@ -40,7 +40,7 @@ const SearchInput = styled.input`
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
+  border-bottom:1px solid ${color.ColorTwo};
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
 ` 
@@ -61,11 +61,11 @@ const SearchButton = styled.button`
   z-index: 1;
   
   &:focus ~ .input-search{
-  width: 300px;
+  /* width: 300px;
   border-radius: 0px;
   background-color: transparent;
   border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2); */
 }
 `
 

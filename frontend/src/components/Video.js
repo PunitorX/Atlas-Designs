@@ -99,14 +99,14 @@ function Video({src, isMuted}) {
               <VideoChip />
               <VideoChip />
             </VideoChips>
-            {/* <VideoHeaders>
+            <VideoHeaders>
               <VideoHeader>
                 Build your dream computer
               </VideoHeader>
               <VideoHeaderTwo>
               Explore through endless parts and accessories to suit your needs and desires for your personal computer. Build the computer you've always dreamed about.
               </VideoHeaderTwo>
-            </VideoHeaders> */}
+            </VideoHeaders>
             
             <SearchBar data={BookData} />
           </VideoContent>
