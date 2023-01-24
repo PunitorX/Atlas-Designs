@@ -296,7 +296,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavUser to='/Login'>
+            <NavUser to='/CreateAccount'>
               <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
               <NavLogin>Login <span>/ Register</span></NavLogin> 
               {/* Will need to be a ternary for login verification */}

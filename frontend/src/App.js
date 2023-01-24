@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Forum from "./pages/Forum";
 import Builds from "./pages/Builds";
 import Projects from "./pages/Projects";
+import { Success } from './pages/Success';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path='/Forum' element={<Forum />} />
           <Route path='/Builds' element={<Builds />} />
           <Route path='/Projects' element={<Projects />} />
+          <Route path='/Success' element={<Success />} />
         </Routes>
         <Footer />
       </Router>
