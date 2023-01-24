@@ -7,11 +7,12 @@ import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
 
 const SearchBox = styled.form`
+  padding-top: 1rem;
+`
+const SearchContainer = styled.div`
   width: fit-content;
   height: fit-content;
   position: relative;
-`
-const SearchContainer = styled.div`
 `
 
 const SearchInput = styled.input`
