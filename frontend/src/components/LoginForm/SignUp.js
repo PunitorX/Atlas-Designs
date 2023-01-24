@@ -7,7 +7,7 @@ import validateInfo from './ValidateInfo'
 import { Link } from 'react-router-dom'
 
 const Form = styled.form`
-
+  
 `
 
 const FormHeader = styled.h1`
@@ -132,7 +132,7 @@ export const SignUp = ({submitForm}) => {
             {errors.passwordTwo && <p>{errors.passwordTwo}</p>}
           </FormItem>
 
-          <ButtonTwo as="button" type='submit' to='/Success'>
+          <ButtonTwo as="button" type='submit' to='/Success' stroke={'#2C3333'} color={'#2C3333'}>
             Create Account
           </ButtonTwo>
 

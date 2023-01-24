@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { font } from '../../GlobalFonts'
 
 const Button = styled(Link)`
   font-size: 1rem;
-  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-family: ${font.FontTwo};
   text-decoration: none;
     
   &:hover {
@@ -12,7 +14,7 @@ const Button = styled(Link)`
   }
 
   &.btn {
-    color: #fff;
+    color: ${(props) => props.color};
     cursor: pointer;
     line-height: 45px;
     max-width: 150px; 
@@ -22,7 +24,7 @@ const Button = styled(Link)`
     text-align: center;
 
     &:hover {
-      font-weight: bold;
+      font-weight: 900;
     }
   }
 
@@ -36,7 +38,7 @@ const Button = styled(Link)`
 
     rect {
       fill: none;
-      stroke: #fff;
+      stroke: ${(props) => props.stroke};
       stroke-width: 2;
       stroke-dasharray: 422, 0;
       transition: all .75s linear;
@@ -53,9 +55,9 @@ const Button = styled(Link)`
   }
 `
 
-function ButtonTwo({children, onClick, to}) {
+function ButtonTwo({children, onClick, to, stroke, color}) {
   return (
-    <Button className='btn btn-1' onClick={onClick} to={to} >
+    <Button className='btn btn-1' onClick={onClick} to={to} stroke={stroke} color={color}>
       <svg >
         <rect x="0" y="0" fill="none" width="100%" height="100%" />
       </svg>
