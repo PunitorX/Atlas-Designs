@@ -41,7 +41,7 @@ const VideoChips = styled.div`
   display: flex;
   gap: 25px;
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 `
 
 const VideoHeaders = styled.section`
