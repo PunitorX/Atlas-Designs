@@ -8,7 +8,8 @@ const Button = styled(Link)`
   font-weight: 500;
   font-family: ${font.FontTwo};
   text-decoration: none;
-    
+  text-align: center;
+  
   &:hover {
     background: rgba(#fff, 1);
   }
@@ -21,7 +22,6 @@ const Button = styled(Link)`
     position: relative;
     text-transform: uppercase;
     width: 100%; 
-    text-align: center;
 
     &:hover {
       font-weight: 900;
