@@ -3,7 +3,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
 import BuildCard from '../components/Cards/BuildCard'
-import ProductCard from '../components/Cards/ProductCard'
+import HomeCard from '../components/Cards/HomeCard'
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
 import Video from '../components/Video'
@@ -132,7 +132,7 @@ const Home = () => {
             </SectionView>
           </SectionHeader>
           <SectionCard>
-            <ProductCard />
+            <HomeCard />
           </SectionCard>
         </BodySection>
 
