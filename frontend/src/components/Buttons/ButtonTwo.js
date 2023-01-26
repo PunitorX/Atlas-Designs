@@ -55,9 +55,9 @@ const Button = styled(Link)`
   }
 `
 
-function ButtonTwo({children, onClick, to, stroke, color}) {
+function ButtonTwo({children, onClick, to, stroke, color, as, type}) {
   return (
-    <Button className='btn btn-1' onClick={onClick} to={to} stroke={stroke} color={color}>
+    <Button className='btn btn-1' onClick={onClick} to={to} stroke={stroke} color={color} as={as} type={type}>
       <svg >
         <rect x="0" y="0" fill="none" width="100%" height="100%" />
       </svg>
