@@ -1,25 +1,26 @@
 import React from 'react'
+import { font } from '../../GlobalFonts'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { color } from '../../GlobalColors'
 
 const ButtonContainer = styled(Link)`
-    font-family: 'Lato', sans-serif;
+    font-family: ${font.FontThree};
     cursor: pointer;
-    letter-spacing: 1px;
-    font-weight: 600;
-    
+    letter-spacing: 1.4px;
     display: inline-block;
     overflow: hidden;
     color: #DFF6FF;
-    background-color: #005de0;
+    background-color: ${color.ColorFive};
     border-color: transparent;
     border: 2px solid;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 2rem 0 1rem 0;
     padding: 1rem;
     border-style: solid;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
     text-decoration: none;
     z-index: 1;
     position: relative;
@@ -35,7 +36,7 @@ const ButtonContainer = styled(Link)`
       height: 150%;
       width: 150%;
       bottom: 0;
-      background: #010C2A;
+      background: ${color.ColorThree};
       transform: skewX(45deg) scale(0, 1);
       transition: all 0.5s ease 0s;
     }
