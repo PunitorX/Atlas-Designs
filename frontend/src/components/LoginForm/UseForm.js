@@ -12,7 +12,7 @@ const UseForm = (callback, validate) => {
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const {name, value} = e.target;
     setValues({
       ...values,
@@ -20,7 +20,7 @@ const UseForm = (callback, validate) => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     setErrors(validate(values));

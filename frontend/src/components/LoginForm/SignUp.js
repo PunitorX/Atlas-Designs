@@ -15,6 +15,9 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 
   h1 {
     margin-top: 0;
@@ -51,87 +54,87 @@ const FormSpan = styled.span`
 
 const FormGroup = styled.div`
   width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  padding-top: 1rem ;
 `
 
 // Input 
 
 const FormItem = styled.div`
-
-  .bar {
-    position: relative;
-    display: block;
-    width: 320px;
-
-    &:before {
-      content: '';
-      height: 2px;
-      width: 0;
-      bottom: 0px;
-      position: absolute;
-      background-color: #eee;
-      transition: 300ms ease all;
-      left: 0%;
-    }
-  }
+  width: 100%;
+  height: 15px;
+  padding: 1rem 0;
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
 `
 
 const FormLabel = styled.label`
-  color: ${color.ColorOne};
-  font-size: 16px;
-  font-weight: normal;
+  margin-left: .5rem;
   position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 300ms ease all;
+  background-color: #fff; 
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  transition: 0.5s;
+  z-index: 0;
 `
 
 const FormInput = styled.input`
+  position: absolute;
+  width: 85%;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  font-size: 1rem;
+  padding: 0 1.4rem;
+  z-index: 1;
+  border-radius: 5px;
 
-  background: none;
-    color: ${color.ColorFive};
-    font-size: 1.2rem;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 320px;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid green;
+  &:focus {
+    border: 3px solid ${color.ColorFive};
 
-    &:focus {
-      outline: none;
-    }
-    &:focus ~ label,
-    &:valid ~ label {
-      top: -14px;
-      font-size: 2.6rem;
+    &::after {
       color: ${color.ColorFive};
     }
-    &:focus ~ .bar:before {
-      width: $width;
-    }
-  
-`
+  }
 
-// Submit
+  &:focus + label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: .8rem;
+    font-weight: 600;
+    color: ${color.ColorFive};
+  }
 
-const FormButton = styled(Link)`
-
+  &:not(:placeholder-shown)+ label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: .8rem;
+  }
 `
 
 // Login
 
 const FormLogin = styled.div`
-
+  padding-top: 2rem;
+  width: 85%;
+  text-align: center;
 `
 
 const FormLink = styled(Link)`
-
+  text-decoration: none;
+  padding-left: 0.5rem;
 `
 
 
 
-export const SignUp = ({submitForm}) => {
+function SignUp ({submitForm}) {
   const {handleChange, values, handleSubmit, errors} = UseForm(submitForm, validateInfo)
 
   return (
@@ -144,90 +147,84 @@ export const SignUp = ({submitForm}) => {
         <FormSpan />
         <FormGroup>
 
-          <FormItem>
-            <FormLabel htmlFor={'firstname'}>
-              First Name
-            </FormLabel>
+          <FormItem>            
             <FormInput 
               id='firstname'
               type='text'
               name='firstname'
-              placeholder=''
+              placeholder='First Name'
               value={values.firstname}
               onChange={handleChange}
             />
+            <FormLabel htmlFor={'firstname'}>
+              First Name
+            </FormLabel>
             {errors.firstname && <p>{errors.firstname}</p>}
-            <span className='highlight'></span>
-            <span className='bar'></span>
           </FormItem>
 
-          <FormItem>
-            <FormLabel htmlFor={'lastname'}>
-              Last Name              
-            </FormLabel>
+          <FormItem>         
             <FormInput 
               id='lastname'
               type='text'
               name='lastname'
-              placeholder=''
+              placeholder='Last Name'
               value={values.lastname}
               onChange={handleChange}
             />
+            <FormLabel htmlFor={'lastname'}>
+              Last Name              
+            </FormLabel>
             {errors.lastname && <p>{errors.lastname}</p>}
           </FormItem>
             
-          <FormItem>
-            <FormLabel htmlFor={'email'}>
-              Email
-            </FormLabel>
+          <FormItem>          
             <FormInput 
               id='email'
               type='text'
               name='email'
-              placeholder=''
+              placeholder='Email'
               value={values.email}
               onChange={handleChange}
             />
+            <FormLabel htmlFor={'email'}>
+              Email
+            </FormLabel>
             {errors.email && <p>{errors.email}</p>}
           </FormItem>
 
           <FormItem>
-            <FormLabel htmlFor={'passwordOne'}>
-              Password
-            </FormLabel>
             <FormInput 
               id='passwordOne'
               type='text'
-              name='passwordOne'
-              placeholder=''
+              name='password'
+              placeholder='Password'
               value={values.passwordOne}
               onChange={handleChange}
             />
+            <FormLabel htmlFor={'passwordOne'}>
+              Password
+            </FormLabel>
             {errors.passwordOne && <p>{errors.passwordOne}</p>}
           </FormItem>
 
           <FormItem>
-            <FormLabel htmlFor={'passwordTwo'}>
-              Re-Enter Password
-            </FormLabel>
             <FormInput 
               id='passwordTwo'
               type='text'
               name='passwordTwo'
-              placeholder=''
+              placeholder='Re-Enter Password'
               value={values.passwordTwo}
               onChange={handleChange}
             />
+            <FormLabel htmlFor={'passwordTwo'}>
+              Re-Enter Password
+            </FormLabel>
             {errors.passwordTwo && <p>{errors.passwordTwo}</p>}
           </FormItem>
 
-          {/* <ButtonTwo as="a" type='submit' to='/Success' stroke={'#2C3333'} color={'#2C3333'}>
+          <ButtonTwo as="a" type='submit' to='/Success' stroke={'#2C3333'} color={'#2C3333'}>
             Sign Up
-          </ButtonTwo> */}
-
-          <FormButton>
-            Sign Up
-          </FormButton>
+          </ButtonTwo>
 
           <FormLogin>
             Already have an account?<FormLink to='/Login'>Login</FormLink>
@@ -237,3 +234,5 @@ export const SignUp = ({submitForm}) => {
 
   )
 }
+
+export default SignUp
