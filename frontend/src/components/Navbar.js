@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
+import Dropdown from './Dropdown'
 
 const Nav = styled.nav`
   height: 10vh;
@@ -247,9 +248,26 @@ const MenuIcon = styled.div`
 
 function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
   const [click, setClick] = useState(false)
+  const [dropdown, setDropdown] = useState(false)
 
   const handleClick = () => setClick(!click)
   const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if(window.innerWidth < 960) {
+      setDropdown(false)
+    } else {
+      setDropdown(true)
+    }
+  }
+
+  const onMouseLeave = () => {
+    if(window.innerWidth < 960) {
+      setDropdown(false)
+    } else {
+      setDropdown(false)
+    }
+  }
 
   return (
     <Nav>
@@ -260,12 +278,13 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
         </NavLogo>
 
         <NavList> 
-          <NavItem>
+          <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <NavLink className='link' to='/Products'>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}
               />
             </NavLink>
+            {dropdown && <Dropdown />}
           </NavItem>
           <NavItem>
             <NavLink className='link' to='/Forum'>
