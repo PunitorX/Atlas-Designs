@@ -1,35 +1,40 @@
 function validateInfo(values) {
   let errors = {}
 
-  //First Name
+  // First Name
   if(!values.firstname.trim()) {
-    errors.firstname = 'First name required'
+      errors.firstname = 'First name required'
   }
 
-  //Last name
+  // Last Name
   if(!values.lastname.trim()) {
-    errors.lastname = 'Last name required'
+      errors.lastname = 'Last name required'
   }
 
-  //Email
+  // Username
+  // if(!values.username.trim()) {
+  //     errors.username = 'Username required'
+  // }
+
+  // Email
   if(!values.email) {
-    errors.email = 'Email required'
+      errors.email = 'Email required'
   } else if(!/\S+@\S+\.\S+/.test(values.email)) {
-    errors.email = 'Email address is invalid'
+      errors.email = 'Email address is invalid'
   }
 
-  //Password
-  if(!values.passwordOne) {
-    errors.passwordOne = 'Password is required'
-  } else if(values.passwordOne.length < 8) {
-    errors.passwordOne = 'Password needs to be 8 or more characters'
+  // Password
+  if(!values.password1) {
+      errors.password1 = 'Password is required'
+  } else if(values.password1.length < 8) {
+      errors.password1 = 'Password needs to be 8 or more characters'
   }
 
-  //Match Passwords
-  if(!values.passwordTwo) {
-    errors.passwordTwo = 'Password is required'
-  } else if(values.passwordTwo !== values.passwordOne) {
-    errors.passwordTwo = 'Passwords do not match'
+  // Password Match
+  if(!values.password2) {
+      errors.password2 = 'Password is required'
+  } else if(values.password2 !== values.password1) {
+      errors.password2 = 'Password do not match'
   }
 
   return errors

@@ -10,11 +10,11 @@ import Product from "./pages/Product";
 import WishList from "./pages/WishList";
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
+import Success from './components/LoginForm/Success';
 import Checkout from "./pages/Checkout";
 import Forum from "./pages/Forum";
 import Builds from "./pages/Builds";
 import Projects from "./pages/Projects";
-import AccountSuccess from './pages/AccountSuccess';
 
 function App() {
   return (
@@ -29,11 +29,11 @@ function App() {
           <Route path='/WishList' element={<WishList />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/CreateAccount' element={<CreateAccount />} />
+          <Route path='Success' element={<Success />} />
           <Route path='/Checkout' element={<Checkout />} />
           <Route path='/Forum' element={<Forum />} />
           <Route path='/Builds' element={<Builds />} />
           <Route path='/Projects' element={<Projects />} />
-          <Route path='/AccountSuccess' element={<AccountSuccess />} />
         </Routes>
         <Footer />
       </Router>

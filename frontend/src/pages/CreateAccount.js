@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SignUp from '../components/LoginForm/SignUp'
-import AccountSuccess from '../pages/AccountSuccess'
+import Success from '../components/LoginForm/Success'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -16,7 +16,7 @@ function CreateAccount() {
   
   return (
     <Container>
-      {!isSubmitted ? <SignUp submitForm={submitForm} /> : <AccountSuccess />}
+      {!isSubmitted ? <SignUp submitForm={submitForm} /> : <Success />}
     </Container>
   )
 }

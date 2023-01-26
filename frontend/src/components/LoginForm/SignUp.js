@@ -196,7 +196,7 @@ function SignUp ({submitForm}) {
             <FormInput 
               id='passwordOne'
               type='text'
-              name='password'
+              name='passwordOne'
               placeholder='Password'
               value={values.passwordOne}
               onChange={handleChange}
@@ -222,7 +222,7 @@ function SignUp ({submitForm}) {
             {errors.passwordTwo && <p>{errors.passwordTwo}</p>}
           </FormItem>
 
-          <ButtonTwo as="a" type='submit' to='/Success' stroke={'#2C3333'} color={'#2C3333'}>
+          <ButtonTwo type='submit' to='/Success' stroke={'#2C3333'} color={'#2C3333'}>
             Sign Up
           </ButtonTwo>
 

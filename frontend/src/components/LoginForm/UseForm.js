@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 const UseForm = (callback, validate) => {
   const [values, setValues] = useState({
     firstname: '',
     lastname: '',
+    // username: '',
     email: '',
     passwordOne: '',
     passwordTwo: ''
-  })
+  })  
 
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
