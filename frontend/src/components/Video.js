@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import VideoI from '../../src/Videos/videoOne.mp4'
 import VideoII from '../../src/Videos/videoTwo.mp4'
 import { color } from '../GlobalColors'
 import SearchBar from './SearchBar'
