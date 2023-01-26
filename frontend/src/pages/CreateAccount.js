@@ -15,9 +15,16 @@ function CreateAccount() {
   }
   
   return (
-    <Container>
-      {!isSubmitted ? <SignUp submitForm={submitForm} /> : <Success />}
-    </Container>
+    <>
+      <Container>
+        {!isSubmitted ? (
+        <SignUp submitForm={submitForm} />
+        ) : (
+        <Success />
+        )}
+      </Container>
+    </>
+    
   )
 }
 

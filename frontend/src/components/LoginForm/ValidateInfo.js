@@ -24,17 +24,17 @@ function validateInfo(values) {
   }
 
   // Password
-  if(!values.password1) {
-      errors.password1 = 'Password is required'
-  } else if(values.password1.length < 8) {
-      errors.password1 = 'Password needs to be 8 or more characters'
+  if(!values.passwordOne) {
+      errors.passwordOne = 'Password is required'
+  } else if(values.passwordOne.length < 8) {
+      errors.passwordOne = 'Password needs to be 8 or more characters'
   }
 
   // Password Match
-  if(!values.password2) {
-      errors.password2 = 'Password is required'
-  } else if(values.password2 !== values.password1) {
-      errors.password2 = 'Password do not match'
+  if(!values.passwordTwo) {
+      errors.passwordTwo = 'Password is required'
+  } else if(values.passwordTwo !== values.passwordOne) {
+      errors.passwordTwo = 'Password do not match'
   }
 
   return errors
