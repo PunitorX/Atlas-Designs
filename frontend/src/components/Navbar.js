@@ -85,20 +85,21 @@ const NavItem = styled.li`
   height: inherit; 
 
   .dropDownMenu {
-    background: red;
-    width: 200px;
+    background: ${color.ColorFour};
+    width: 650px;
     position: absolute;
-    top: 80px;
+    top: 93px;
     list-style: none;
-    text-align: center;
+    
     z-index: 999;
+    /* display: flex; */
 
     li {
-      background: blue;
+      
       cursor: pointer;
 
       &:hover {
-        background: red;
+        
       }
     }
   }
@@ -112,8 +113,10 @@ const NavItem = styled.li`
     height: 100%;
     width: 100%;
     text-decoration: none;
+    list-style-type: none;
     color: #fff;
-    padding: 16px;
+    font-size: 1rem;
+    /* padding: 16px 4px; */
   }
 
   @media ${device.laptop} {
