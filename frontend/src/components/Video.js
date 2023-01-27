@@ -31,7 +31,7 @@ const VideoContainer = styled.video`
 const VideoContent = styled.div`
   height: inherit;
   width: 100%;
-  z-index: 999;
+  /* z-index: 999; */
   position: absolute;
   display: flex;
   flex-direction: column;

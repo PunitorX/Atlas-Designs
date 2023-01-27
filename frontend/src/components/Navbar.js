@@ -84,6 +84,38 @@ const NavItem = styled.li`
   margin: 0 .5rem;
   height: inherit; 
 
+  .dropDownMenu {
+    background: red;
+    width: 200px;
+    position: absolute;
+    top: 80px;
+    list-style: none;
+    text-align: center;
+    z-index: 999;
+
+    li {
+      background: blue;
+      cursor: pointer;
+
+      &:hover {
+        background: red;
+      }
+    }
+  }
+
+  .dropDownClicked {
+    display: none;
+  }
+
+  .dropdown-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px;
+  }
+
   @media ${device.laptop} {
     margin: 0;
   }
@@ -279,7 +311,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <NavList> 
           <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <NavLink className='link' to='/Products'>
+            <NavLink className='link' style={{padding: '25% 1rem'}}>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}
               />
