@@ -86,21 +86,22 @@ const NavItem = styled.li`
 
   .dropDownMenu {
     background: ${color.ColorFour};
-    width: 650px;
+    width: 550px;
+    height: 200px;
     position: absolute;
-    top: 93px;
+    top: 71px;
     list-style: none;
-    
     z-index: 999;
-    /* display: flex; */
+    display: flex;
+    justify-content: space-evenly;
+    padding: .5rem 0;
+    
 
     li {
-      
-      cursor: pointer;
+    }
 
-      &:hover {
-        
-      }
+    @media ${device.laptopL} {
+      top: 107px;
     }
   }
 
@@ -110,13 +111,18 @@ const NavItem = styled.li`
 
   .dropdown-link {
     display: block;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     text-decoration: none;
     list-style-type: none;
     color: #fff;
     font-size: 1rem;
-    /* padding: 16px 4px; */
+    padding: .5rem 1rem;
+
+    &:hover {
+      transition: all .2s ease-in ;
+      color: ${color.ColorOne};
+    }
   }
 
   @media ${device.laptop} {
