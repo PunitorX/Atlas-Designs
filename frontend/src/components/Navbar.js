@@ -82,48 +82,7 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   list-style-type: none;
   margin: 0 .5rem;
-  height: inherit; 
-
-  .dropDownMenu {
-    background: ${color.ColorFour};
-    width: 550px;
-    height: 200px;
-    position: absolute;
-    top: 71px;
-    list-style: none;
-    z-index: 999;
-    display: flex;
-    justify-content: space-evenly;
-    padding: .5rem 0;
-    
-
-    li {
-    }
-
-    @media ${device.laptopL} {
-      top: 107px;
-    }
-  }
-
-  .dropDownClicked {
-    display: none;
-  }
-
-  .dropdown-link {
-    display: block;
-    /* height: 100%; */
-    width: 100%;
-    text-decoration: none;
-    list-style-type: none;
-    color: #fff;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-
-    &:hover {
-      transition: all .2s ease-in ;
-      color: ${color.ColorOne};
-    }
-  }
+  height: inherit;
 
   @media ${device.laptop} {
     margin: 0;
