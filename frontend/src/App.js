@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
 import Success from './components/LoginForm/Success';
 import Checkout from "./pages/Checkout";
-import { Cart } from './pages/Cart'
+import Cart from './pages/ShoppingCart'
 import Forum from "./pages/Forum";
 import Builds from "./pages/Builds";
 import Projects from "./pages/Projects";

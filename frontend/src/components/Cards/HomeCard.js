@@ -88,8 +88,8 @@ function ProductCard() {
                 </ProductContainer>
               </TopHalf>
               <CardButtons>
-                  <ButtonTwo to="/Product" stroke={'#2666CF'} color={'#2666CF'}>View</ButtonTwo>
-                  <ButtonTwo to='Products' stroke={'#2666CF'} color={'#2666CF'}>Explore</ButtonTwo>
+                  <ButtonTwo to="/Product" stroke={'#fff'} color={'#fff'}>View</ButtonTwo>
+                  <ButtonTwo to='Products' stroke={'#fff'} color={'#fff'}>Add To Cart</ButtonTwo>
               </CardButtons>
             </CardContainer>   
           </Card>
