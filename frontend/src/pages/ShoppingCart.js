@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../CartContext'
+import { CartTemplate } from '../components/CartTemplate'
 import styled from 'styled-components'
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
