@@ -38,10 +38,22 @@ const SectionHeader = styled.h2`
 
 const SectionBody = styled.div`
   height: 450px;
-  background-color: #fff;
+  /* background-color: #fff; */
 `
 
-const ProductName = styled.h5`
+const CartProducts = styled.div`
+
+`
+
+const CartItem = styled.div`
+
+`
+
+const CartTotal = styled.div`
+
+`
+
+const CartPrice = styled.div`
 
 `
 
@@ -60,13 +72,13 @@ const CartCheckout = styled.section`
 `
 
 function Cart(props) {
-  const product = props.product
-  const cart = useContext(CartContext)
+  const product = props.product;
+  const cart = useContext(CartContext);
   // const productQuantity = cart.getProductQuantity(product.id);
-  console.log(cart.items)
+  // console.log(cart.items);
 
-  // const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
-  // const productsPrice = cart.getTotalCost().toFixed(2)
+  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
+  const productsPrice = cart.getTotalCost().toFixed(2)
 
   return (
     <>
@@ -78,14 +90,19 @@ function Cart(props) {
             Shopping Cart
           </SectionHeader>
           <SectionBody>
-            {/* <ProductName>{product.items}</ProductName> */}
-
-            {/* {productsCount > 0 ?
+            {productsCount > 0 ?
             <>
+              <CartProducts>
+                {cart.items.map((product, index) => (
+                  <CartItem key={index} id={product.id} quantity={product.quantity} price={product.price}></CartItem>
+                ))}
+              </CartProducts>
 
+              <CartTotal>Items({productsCount})</CartTotal>
+              <CartPrice>Subtotal (${productsPrice})</CartPrice>
             </> :
             <CartEmpty>Your cart is empty</CartEmpty>
-            } */}
+            }
 
           </SectionBody>
         </CartSection>

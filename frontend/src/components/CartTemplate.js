@@ -8,15 +8,15 @@ const CartTemplate = (props) => {
     const cart = useContext(CartContext)
     const id = props.id
     const quantity = props.quantity
-    const ProductData = getProductData(id)
+    const productData = getProductData(id)
 
   return (
     <>
         <tbody>
             <tr>
-                <th>{ProductData.item}</th>
-                <td>{quantity}</td>
-                <td>${(quantity * ProductData.price).toFixed(2)}</td>
+                <th>{productData.item}</th>
+                <td>({quantity})</td>
+                <td>${(quantity * productData.price).toFixed(2)}</td>
                 <FontAwesomeIcon icon={faTimes} onClick={() => cart.deleteFromCart(id)} style={{cursor: 'pointer'}} />
             </tr>
         </tbody>
