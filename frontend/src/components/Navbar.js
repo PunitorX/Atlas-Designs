@@ -279,7 +279,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <NavList> 
           <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <NavLink className='link' style={{padding: '25% 1rem'}}>
+            <NavLink className='link' to='/Products' style={{padding: '25% 1rem'}}>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}
               />

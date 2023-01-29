@@ -3,7 +3,7 @@ import { getProductData } from './Data/ProductData'
 
 export const CartContext = createContext({
   items: [],
-  getProductQauntity: () => {},
+  getProductQuantity: () => {},
   addToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
@@ -13,26 +13,26 @@ export const CartContext = createContext({
 function CartProvider({children}) {
   const [ cartProduct, setCartProduct] = useState([])
 
-  function getProductQauntity(id) {
-    const qauntity = cartProduct.find(product => product.id === id)?.qauntity
+  function getProductQuantity(id) {
+    const quantity = cartProduct.find(product => product.id === id)?.quantity
 
-    if(qauntity === undefined) {
-      return 0
+    if(quantity === undefined){
+        return 0
     }
 
-    return qauntity
-  }
+    return quantity;
+}
 
   function addToCart(id) {
-    const qauntity = getProductQauntity(id)
+    const quantity = getProductQuantity(id)
 
-    if(qauntity === 0) { // Product is not in the cart
+    if(quantity === 0) { // Product is not in the cart
       setCartProduct (
         [
           ...cartProduct,
           {
             id: id,
-            qauntity: 1
+            quantity: 1
           }
         ]
       )
@@ -40,7 +40,7 @@ function CartProvider({children}) {
       setCartProduct (
         cartProduct.map(
           product => product.id === id
-          ? {...product, qauntity: product.qauntity + 1} // if the statement is true
+          ? {...product, quantity: product.quantity + 1} // if the statement is true
           : product // if the statement is false
         )
       )
@@ -48,15 +48,15 @@ function CartProvider({children}) {
   }
 
   function removeOneFromCart(id) {
-    const qauntity = getProductQauntity(id)
+    const quantity = getProductQuantity(id)
 
-    if(qauntity == 1) {
+    if(quantity == 1) {
       deleteFromCart(id);
     } else {
       setCartProduct (
         cartProduct.map (
           product => product.id === id
-          ? {...product, qauntity: product.qauntity - 1} // if the statement is true
+          ? {...product, quantity: product.quantity - 1} // if the statement is true
           : product // if the statement is false
         )
       )
@@ -78,7 +78,7 @@ function CartProvider({children}) {
     let totalCost = 0;
     cartProduct.map((cartItem) => {
       const productData = getProductData(cartItem.id)
-      totalCost += (productData.price * cartItem.qauntity)
+      totalCost += (productData.price * cartItem.quantity)
     })
 
     return totalCost;
@@ -86,7 +86,7 @@ function CartProvider({children}) {
 
   const contextValue ={
     items: cartProduct,
-    getProductQauntity,
+    getProductQuantity,
     addToCart,
     removeOneFromCart,
     deleteFromCart,
