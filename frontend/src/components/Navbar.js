@@ -310,7 +310,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='/Checkout'>
+            <NavLink to='/Cart'>
               <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
             </NavLink>
           </NavItem>

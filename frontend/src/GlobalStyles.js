@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: ${color.ColorSix};
+    background-color: #EAEDED;
     color: #000;
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
