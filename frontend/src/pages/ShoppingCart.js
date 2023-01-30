@@ -97,13 +97,12 @@ function Cart(props) {
                   <CartItem key={index} id={product.id} quantity={product.quantity} price={product.price}></CartItem>
                 ))}
               </CartProducts>
-
-              <CartTotal>Items({productsCount})</CartTotal>
-              <CartPrice>Subtotal (${productsPrice})</CartPrice>
             </> :
             <CartEmpty>Your cart is empty</CartEmpty>
             }
 
+            <CartTotal>Items({productsCount})</CartTotal>
+            <CartPrice>Subtotal (${productsPrice})</CartPrice>
           </SectionBody>
         </CartSection>
 
