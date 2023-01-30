@@ -89,7 +89,6 @@ function ProductCard() {
               </TopHalf>
               <CardButtons>
                   <ButtonTwo to="/Product" stroke={'#fff'} color={'#fff'}>View</ButtonTwo>
-                  <ButtonTwo to='Products' stroke={'#fff'} color={'#fff'}>Add To Cart</ButtonTwo>
               </CardButtons>
             </CardContainer>   
           </Card>
