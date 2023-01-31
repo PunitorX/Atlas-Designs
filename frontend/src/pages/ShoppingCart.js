@@ -37,6 +37,20 @@ const SectionHeader = styled.h2`
 // Items in the cart (start)
 const SectionBody = styled.div`
   height: 400px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${color.ColorTwo};
+    border-radius: 10px;
+  }
 `
 
 const CartProducts = styled.div`
@@ -80,8 +94,7 @@ const CartCheckout = styled.section`
   width: 100%;
 `
 
-function Cart(props) {
-  const product = props.product;
+function Cart() {
   const cart = useContext(CartContext);
   // const productQuantity = cart.getProductQuantity(product.id);
   // console.log(cart.items);
@@ -98,20 +111,20 @@ function Cart(props) {
           <SectionHeader>
             Shopping Cart
           </SectionHeader>
-          <SectionBody> {/* Items in the cart */}
+          
+          <SectionBody> {/* Items in the cart; Ternary statement */}
             {productsCount > 0 ?
             <>
               <CartProducts>
                 {cart.items.map((product, index) => (
-                  <CartTemplate key={index} id={product.id} quantity={product.quantity} price={product.price}>
-
-                  </CartTemplate>
+                  <CartTemplate key={index} id={product.id} quantity={product.quantity} price={product.price} />
                 ))}
               </CartProducts>
             </> :
             <CartEmpty>Your cart is empty</CartEmpty>
             }
           </SectionBody> 
+
           <CartTotal> 
             <CartTotalItems>Items({productsCount})</CartTotalItems>
             <CartTotalPrice>Subtotal (${productsPrice})</CartTotalPrice>
