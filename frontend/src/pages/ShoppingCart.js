@@ -1,11 +1,10 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { CartContext } from '../CartContext'
-import { CartTemplate } from '../components/CartTemplate'
 import styled from 'styled-components'
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
 import { font } from '../GlobalFonts'
+import CartTemplate from '../components/CartTemplate'
 
 const CartContainer = styled.div`
   height: 90vh;
@@ -13,7 +12,7 @@ const CartContainer = styled.div`
 `
 
 const CartContent = styled.div`
-  height: inherit;
+  height: 550px;
   width: 100%;
   font-family: ${font.FontTwo};
   color: ${color.ColorTwo};
@@ -26,7 +25,7 @@ const CartContent = styled.div`
 const CartSection = styled.section`
   background-color: ${color.ColorThree};
   padding: 0 1.5rem;
-  height: 550px;
+  height: 100%;
   width: 850px;
 `
 
@@ -35,23 +34,28 @@ const SectionHeader = styled.h2`
   letter-spacing: 1.2px;
   border-bottom: 1px solid ${color.ColorTwo};
 `
-
+// Items in the cart (start)
 const SectionBody = styled.div`
-  height: 450px;
-  /* background-color: #fff; */
+  height: 400px;
 `
 
 const CartProducts = styled.div`
 
 `
 
-const CartItem = styled.div`
+const ProductName = styled.div`
 
 `
 
+// Items in the cart (end)
+
 const CartTotal = styled.div`
+  margin: 1.2rem 0;
+  padding: 1rem 0;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  border-top: 1px solid ${color.ColorTwo};
 `
 
 const CartTotalItems = styled.div`
@@ -94,22 +98,24 @@ function Cart(props) {
           <SectionHeader>
             Shopping Cart
           </SectionHeader>
-          <SectionBody>
+          <SectionBody> {/* Items in the cart */}
             {productsCount > 0 ?
             <>
               <CartProducts>
                 {cart.items.map((product, index) => (
-                  <CartItem key={index} id={product.id} quantity={product.quantity} price={product.price}></CartItem>
+                  <CartTemplate key={index} id={product.id} quantity={product.quantity} price={product.price}>
+
+                  </CartTemplate>
                 ))}
               </CartProducts>
             </> :
             <CartEmpty>Your cart is empty</CartEmpty>
             }
-            <CartTotal>
-              <CartTotalItems>Items({productsCount})</CartTotalItems>
-              <CartTotalPrice>Subtotal (${productsPrice})</CartTotalPrice>
-            </CartTotal>
-          </SectionBody>
+          </SectionBody> 
+          <CartTotal> 
+            <CartTotalItems>Items({productsCount})</CartTotalItems>
+            <CartTotalPrice>Subtotal (${productsPrice})</CartTotalPrice>
+          </CartTotal>
         </CartSection>
 
         <CartCheckout>
