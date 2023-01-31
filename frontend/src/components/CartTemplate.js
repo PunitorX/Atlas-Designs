@@ -1,10 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../CartContext'
 import { getProductData } from '../Data/ProductData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
 import StarRating from './StarRating'
+import Select from 'react-select'
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
 
 const Product = styled.div`
   height: 250px;
@@ -37,6 +44,8 @@ const CartTemplate = (props) => {
     const quantity = props.quantity
     const productData = getProductData(id)
 
+    const [selectedOption, setSelectedOption] = useState(null)
+
   return (
     <Product>
       <ProductName>{productData.item}</ProductName>
@@ -45,6 +54,11 @@ const CartTemplate = (props) => {
         <ProductRating>{productData.ratingCount}</ProductRating>
       </Rating>
       <ProductQuantity>
+        <Select 
+          defaultValue={selectedOption}
+          onChange={setSelectedOption}
+          options={options}
+        />
         <span>Quantity</span>
         ({quantity})
       </ProductQuantity>
