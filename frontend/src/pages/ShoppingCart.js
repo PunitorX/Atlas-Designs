@@ -50,10 +50,15 @@ const CartItem = styled.div`
 `
 
 const CartTotal = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
+const CartTotalItems = styled.div`
 
 `
 
-const CartPrice = styled.div`
+const CartTotalPrice = styled.div`
 
 `
 
@@ -100,9 +105,10 @@ function Cart(props) {
             </> :
             <CartEmpty>Your cart is empty</CartEmpty>
             }
-
-            <CartTotal>Items({productsCount})</CartTotal>
-            <CartPrice>Subtotal (${productsPrice})</CartPrice>
+            <CartTotal>
+              <CartTotalItems>Items({productsCount})</CartTotalItems>
+              <CartTotalPrice>Subtotal (${productsPrice})</CartTotalPrice>
+            </CartTotal>
           </SectionBody>
         </CartSection>
 
