@@ -54,11 +54,11 @@ const CartTemplate = (props) => {
         <ProductRating>{productData.ratingCount}</ProductRating>
       </Rating>
       <ProductQuantity>
-        <Select 
+        {/* <Select 
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={options}
-        />
+        /> */}
         <span>Quantity</span>
         ({quantity})
       </ProductQuantity>
