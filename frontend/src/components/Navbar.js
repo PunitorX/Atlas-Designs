@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,6 +6,7 @@ import { faAngleDown, faBars, faCircleUser, faHeart, faShoppingCart, faTimes } f
 import { device } from '../DeviceSize'
 import { color } from '../GlobalColors'
 import Dropdown from './Dropdown'
+import { CartContext } from '../CartContext'
 
 const Nav = styled.nav`
   height: 10vh;
@@ -247,6 +248,8 @@ const MenuIcon = styled.div`
 // `
 
 function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
+  const cart = useContext(CartContext)
+
   const [click, setClick] = useState(false)
   const [dropdown, setDropdown] = useState(false)
 
@@ -268,6 +271,8 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
       setDropdown(false)
     }
   }
+
+  const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
   return (
     <Nav>
@@ -312,6 +317,7 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           <NavItem>
             <NavLink to='/Cart'>
               <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
+              <span>{productCount}</span>
             </NavLink>
           </NavItem>
           <NavItem>
