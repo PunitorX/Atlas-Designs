@@ -9,6 +9,7 @@ const Button = styled(Link)`
   font-family: ${font.FontTwo};
   text-decoration: none;
   text-align: center;
+  padding: 16px 24px;
   
   &:hover {
     background: rgba(#fff, 1);
@@ -18,10 +19,9 @@ const Button = styled(Link)`
     color: ${(props) => props.color};
     cursor: pointer;
     line-height: 45px;
-    max-width: 150px; 
     position: relative;
     text-transform: uppercase;
-    width: 100%; 
+    width: auto;
 
     &:hover {
       font-weight: 900;
@@ -30,10 +30,11 @@ const Button = styled(Link)`
 
   &.btn-1 {
     svg {
-      height: 45px;
-      width: 150px;
+      height: 45px; 
+      width: 100%;
       left: 0;
       position: absolute;
+      border-radius: 8px;
     }
 
     rect {

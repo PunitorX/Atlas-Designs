@@ -4,27 +4,38 @@ import ProductCard from '../components/Cards/ProductCard'
 import { productArray } from '../Data/ProductData'
 
 const Container = styled.div`
-  height: 90vh;
-  margin: 2rem;
+  height: auto;
   color: #fff;
-  display: flex;
-  flex-wrap: wrap;
+  width: 65%;
+  margin: 0 auto;
+  padding: 2rem 0 6rem 0;
+`
+
+const ProductsTitle = styled.h1`
+  color: #000;
+  text-align: center;
+  font-size: 48px;
 `
 
 const Section = styled.div`
-padding-right: 1rem;
-  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 `
 
 function Products() {
   return (
     <Container>
-      {productArray.map((product, id) => 
-        <Section key={id}>
-          <ProductCard product={product}/>
-        </Section>
-      )}
-      
+      <ProductsTitle>
+        Products
+      </ProductsTitle>
+      <Section>
+
+        {productArray.map((product, id) => 
+          <ProductCard key={id} product={product}/>
+        )}
+      </Section>
     </Container>
   )
 }
