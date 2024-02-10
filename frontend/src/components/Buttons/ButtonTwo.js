@@ -10,6 +10,7 @@ const Button = styled(Link)`
   text-decoration: none;
   text-align: center;
   padding: 16px 24px;
+  /* background-color: rgba( 0, 0, 0, .6); */
   
   &:hover {
     background: rgba(#fff, 1);
@@ -34,7 +35,8 @@ const Button = styled(Link)`
       width: 100%;
       left: 0;
       position: absolute;
-      border-radius: 8px;
+      /* border-radius: 8px; */
+      color: green;
     }
 
     rect {

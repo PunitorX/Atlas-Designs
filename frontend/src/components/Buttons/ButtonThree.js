@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { color } from '../../GlobalColors'
 
 const ButtonContainer = styled(Link)`
+    width: 100%;
     font-family: ${font.FontThree};
     cursor: pointer;
     letter-spacing: 1.4px;
