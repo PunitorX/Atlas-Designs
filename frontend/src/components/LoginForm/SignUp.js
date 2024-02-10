@@ -22,15 +22,11 @@ const Form = styled.form`
   background-color: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  h1 {
-    margin-bottom: 3rem;
-    font-weight: 900;
-  }
 `
 
 const FormHeader = styled.h1`
-  /* text-align: center; */
+  margin-bottom: 2rem;
+  font-weight: 900;
   width: 80%;
   letter-spacing: 1px;
   padding-bottom: 1rem;
@@ -101,35 +97,53 @@ function SignUp ({submitForm}) {
       </FormHeader>
       <GoogleButton style={{background: '#005DE0'}} onClick={() => { console.log('Google button clicked') }}/>
       <FormSpan />
-      <FormGroup>         
-          <FormInput 
-            id='email'
-            type='text'
-            name='email'
-            placeholder='Email'
-            value={values.email}
-            onChange={handleChange}
-          />
-          {errors.email && <FormError>{errors.email}</FormError>}
+      <FormGroup>    
+        <FormInput 
+          id='firstname'
+          type='text'
+          name='firstname'
+          placeholder='First Name'
+          value={values.firstname}
+          onChange={handleChange}
+        />
+        {errors.firstname && <p>{errors.firstname}</p>}
+        <FormInput 
+          id='lastname'
+          type='text'
+          name='lastname'
+          placeholder='Last Name'
+          value={values.lastname}
+          onChange={handleChange}
+        />
+        {errors.lastname && <p>{errors.lastname}</p>}    
+        <FormInput 
+          id='email'
+          type='text'
+          name='email'
+          placeholder='Email'
+          value={values.email}
+          onChange={handleChange}
+        />
+        {errors.email && <FormError>{errors.email}</FormError>}
 
-          <FormInput 
-            id='passwordOne'
-            type='password'
-            name='passwordOne'
-            placeholder='Password'
-            value={values.passwordOne}
-            onChange={handleChange}
-          />
-          {errors.passwordOne && <FormError>{errors.passwordOne}</FormError>}
-          <FormInput 
-            id='passwordTwo'
-            type='password'
-            name='passwordTwo'
-            placeholder='Confirm Password'
-            value={values.passwordTwo}
-            onChange={handleChange}
-          />
-          {errors.passwordTwo && <FormError>{errors.passwordTwo}</FormError>}
+        <FormInput 
+          id='passwordOne'
+          type='password'
+          name='passwordOne'
+          placeholder='Password'
+          value={values.passwordOne}
+          onChange={handleChange}
+        />
+        {errors.passwordOne && <FormError>{errors.passwordOne}</FormError>}
+        <FormInput 
+          id='passwordTwo'
+          type='password'
+          name='passwordTwo'
+          placeholder='Confirm Password'
+          value={values.passwordTwo}
+          onChange={handleChange}
+        />
+        {errors.passwordTwo && <FormError>{errors.passwordTwo}</FormError>}
       </FormGroup>
 
       <BtnContainer>
