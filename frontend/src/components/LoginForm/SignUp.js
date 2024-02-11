@@ -106,7 +106,7 @@ function SignUp ({submitForm}) {
           value={values.firstname}
           onChange={handleChange}
         />
-        {errors.firstname && <p>{errors.firstname}</p>}
+        {errors.firstname && <FormError>{errors.firstname}</FormError>}
         <FormInput 
           id='lastname'
           type='text'
@@ -115,7 +115,7 @@ function SignUp ({submitForm}) {
           value={values.lastname}
           onChange={handleChange}
         />
-        {errors.lastname && <p>{errors.lastname}</p>}    
+        {errors.lastname && <FormError>{errors.lastname}</FormError>}    
         <FormInput 
           id='email'
           type='text'
