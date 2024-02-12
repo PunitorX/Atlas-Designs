@@ -5,8 +5,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartProvider from './CartContext'
 import Home from "./pages/Home";
-import Products from './pages/Products';
-import Product from "./pages/Product";
 import WishList from "./pages/WishList";
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
@@ -16,6 +14,7 @@ import Cart from './pages/ShoppingCart'
 import Forum from "./pages/Forum";
 import Builds from "./pages/Builds";
 import Projects from "./pages/Projects";
+import Market from './pages/Market/Market'
 
 function App() {
   return (
@@ -25,8 +24,7 @@ function App() {
         <Navbar {...NavItems}/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/Products' element={<Products />} />
-          <Route path='/Product' element={<Product />} />
+          <Route path='/Market' element={<Market/>} />
           <Route path='/WishList' element={<WishList />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/CreateAccount' element={<CreateAccount />} />

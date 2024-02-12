@@ -3,4 +3,5 @@ export const NavItems = {
     itemTwo: 'Forum',
     itemThree: 'Builds',
     itemFour: 'Projects',
+    itemFive: 'Traders Market'
 }

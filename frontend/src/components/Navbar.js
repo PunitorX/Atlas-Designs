@@ -36,8 +36,8 @@ const NavContainer = styled.div`
   }
 
   @media ${device.mobileS} {
-   padding: 0 1rem;
-   margin: 0 1rem;
+    padding: 0 1rem;
+    margin: 0 1rem;
   }
 `
 
@@ -99,12 +99,22 @@ const NavLink = styled(Link)`
   .red {
     color: #fff;
     transition: all .3s ease-in-out;
-     
-     &:hover {
-       color: ${color.ColorEight};
-       transition: all .3s ease-in-out;
-     }
-   }
+
+      &:hover {
+        color: ${color.ColorEight};
+        transition: all .3s ease-in-out;
+      }
+  }
+
+  .blue {
+    color: #fff;
+    transition: all .3s ease-in-out;
+
+      &:hover {
+        color: #0277bd;
+        transition: all .3s ease-in-out;
+      }
+  }
 
   &:hover {
     transition: all .3s ease-in-out;
@@ -155,10 +165,6 @@ const NavLogin = styled.div`
   @media ${device.laptop} {
     display: none;
   }
-`
-
-const NavRegister = styled.div`
-  // for login ternary
 `
 
 const MenuOverlay = styled.div`
@@ -228,6 +234,10 @@ const MenuIcon = styled.div`
   }
 `
 
+const NavCount = styled.span`
+  color: ${color.ColorSeven};
+`
+
 // const NavMenuActive = styled.ul`
 //   background: #19191a;
 //     left: 0;
@@ -247,7 +257,7 @@ const MenuIcon = styled.div`
 //     transition: all 0.5s ease;
 // `
 
-function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
+function Navbar ({itemOne, itemTwo, itemThree, itemFour, itemFive}) {
   const cart = useContext(CartContext)
 
   const [click, setClick] = useState(false)
@@ -284,12 +294,17 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
 
         <NavList> 
           <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <NavLink className='link' to='/Products' style={{padding: '25% 1rem'}}>
+            <NavLink className='link' style={{padding: '25% 1rem'}}>
               {itemOne}
               <FontAwesomeIcon icon={faAngleDown} size={'sm'} transform={'right-5'}
               />
             </NavLink>
             {dropdown && <Dropdown />}
+          </NavItem>
+          <NavItem>
+            <NavLink className='link' to='/market'>
+              {itemFive}
+            </NavLink>
           </NavItem>
           <NavItem>
             <NavLink className='link' to='/Forum'>
@@ -316,8 +331,8 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour}) {
           </NavItem>
           <NavItem>
             <NavLink to='/Cart'>
-              <FontAwesomeIcon icon={faShoppingCart} size={'lg'}/>
-              <span>{productCount}</span>
+              <FontAwesomeIcon className='blue' icon={faShoppingCart} size={'lg'}/>
+              <NavCount>{productCount}</NavCount>
             </NavLink>
           </NavItem>
           <NavItem>

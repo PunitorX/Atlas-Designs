@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import ProductCard from '../components/Cards/ProductCard'
-import { productArray } from '../Data/ProductData'
+import ProductCard from '../../components/Cards/ProductCard'
+import { productArray } from '../../Data/ProductData'
 
 const Container = styled.div`
   height: auto;
@@ -24,11 +24,11 @@ const Section = styled.div`
   gap: 20px;
 `
 
-function Products() {
+const Market = () => {
   return (
     <Container>
       <ProductsTitle>
-        Products
+        Market
       </ProductsTitle>
       <Section>
 
@@ -40,4 +40,4 @@ function Products() {
   )
 }
 
-export default Products
+export default Market
