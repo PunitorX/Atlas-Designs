@@ -9,6 +9,9 @@ import Dropdown from './Dropdown'
 import { CartContext } from '../CartContext'
 
 const Nav = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 99;
   height: 10vh;
   background-color: ${color.ColorThree};
 `
