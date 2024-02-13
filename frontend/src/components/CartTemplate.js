@@ -3,26 +3,38 @@ import styled from 'styled-components'
 import { CartContext } from '../CartContext'
 import { getProductData } from '../Data/ProductData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { font } from '../GlobalFonts'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import StarRating from './StarRating'
 import Select from 'react-select'
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
-
 const Product = styled.div`
   height: 250px;
-  border-bottom: 1px dashed #fff;
+  border-top: 1px dashed blue;
+  padding: 12px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  font-family: ${font.FontTwo};
+
+  &:nth-child(1) {
+    border-top: none;
+    padding-top: 0;
+  }
 `
 
-const ProductName = styled.div`
-
+const ProductName = styled.h3`
+  margin: 0;
+  font-size: 18px;
 `
 
-const Rating = styled.div`
+const ProductStock = styled.p`
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #43a047;
+`
+
+const RatingContainer = styled.div`
   display: flex;
 `
 
@@ -31,11 +43,30 @@ const ProductRating = styled.div`
 `
 
 const ProductQuantity = styled.div`
-
+  margin-top: auto;
+  font-size: 18px;
 `
 
 const ProductPrice = styled.div`
+  font-size: 18px;
+  padding: 8px 0;
+`
 
+const BtnContainer = styled.div`
+
+`
+
+const WishBtn = styled.button`
+  padding: 8px 24px;
+  font-family: ${font.FontThree};
+  cursor: pointer;
+  margin-right: 12px;
+`
+
+const RemoveBtn= styled.button`
+  padding: 8px 24px;
+  font-family: ${font.FontThree};
+  cursor: pointer;
 `
 
 const CartTemplate = (props) => {
@@ -49,27 +80,23 @@ const CartTemplate = (props) => {
   return (
     <Product>
       <ProductName>{productData.item}</ProductName>
-      <Rating>
-        <StarRating  value={productData.value}/>
-        <ProductRating>{productData.ratingCount}</ProductRating>
-      </Rating>
+      <RatingContainer>
+        <StarRating value={productData.value}/>
+        <ProductRating>
+          {productData.ratingCount}
+        </ProductRating>
+      </RatingContainer>
+      <ProductStock>{productData.stock}</ProductStock>
       <ProductQuantity>
-        {/* <Select 
-          defaultValue={selectedOption}
-          onChange={setSelectedOption}
-          options={options}
-        /> */}
-        <span>Quantity</span>
-        ({quantity})
+        Quantity: ({quantity})
       </ProductQuantity>
       <ProductPrice>
-        <span>Price: </span>
-        ${(quantity * productData.price).toFixed(2)}
+        Price: ${(quantity * productData.price).toFixed(2)}
       </ProductPrice>
-
-      <button><FontAwesomeIcon icon={faHeart}/> Add to wishlist</button>
-      
-      <button onClick={() => cart.deleteFromCart(id)} style={{cursor: 'pointer'}}>Remove</button>
+      <BtnContainer>
+        <WishBtn><FontAwesomeIcon icon={faHeart}/> Add to wishlist</WishBtn>
+        <RemoveBtn onClick={() => cart.deleteFromCart(id)}>Remove</RemoveBtn>
+      </BtnContainer>
     </Product>
   )
 }
