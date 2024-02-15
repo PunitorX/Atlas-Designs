@@ -8,5 +8,5 @@ export const color = {
   ColorSeven: '#EDA920', // * Yellow
   ColorEight: '#FF2400', // * Scarlet
 
-  SecondaryColorOne: 'rgb(255,190,32)'
+  SecondaryColorOne: 'rgb(255,201,32)'
 }

@@ -140,20 +140,22 @@ const NavLink = styled(Link)`
 `
 
 const NavUser = styled(Link)`
-  color: #fff;
+  color: #000;
+  background-color: ${color.ColorSeven};
+  border-radius: 5px;
+  border: 3px solid ${color.ColorSeven};
+  padding: 8px 24px;
   display: flex;
   align-items: center;
   text-decoration: none;
-  gap: 10px;
-  font-size: 1rem;
+  font-size: 18px;
   cursor: pointer;
-  padding-left: 1rem;
   transition: all .3s ease-in-out;
   
 
   &:hover {
     transition: all .3s ease-in;
-    color: ${color.ColorSeven};
+    background-color: #fff;
   }
 
   @media ${device.laptop} {
@@ -296,6 +298,11 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour, itemFive}) {
         </NavLogo>
 
         <NavList> 
+          <NavItem>
+            <NavLink className='link' to='/'>
+              Home
+            </NavLink>
+          </NavItem>
           <NavItem onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <NavLink className='link' style={{padding: '25% 1rem'}}>
               {itemOne}
@@ -324,9 +331,6 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour, itemFive}) {
               {itemFour}
             </NavLink>
           </NavItem>
-        </NavList>
-
-        <NavList>
           <NavItem>
             <NavLink to='/WishList'>
               <FontAwesomeIcon className='red' icon={faHeart} size={'lg'}/>                       
@@ -340,9 +344,12 @@ function Navbar ({itemOne, itemTwo, itemThree, itemFour, itemFive}) {
           </NavItem>
           <NavItem>
             <NavUser to='/CreateAccount'>
-              <FontAwesomeIcon icon={faCircleUser} size={'xl'}/>
-              <NavLogin>Login <span>/ Register</span></NavLogin> 
-              {/* Will need to be a ternary for login verification */}
+              <NavLogin>Sign Up</NavLogin> 
+            </NavUser>
+          </NavItem>
+          <NavItem>
+            <NavUser to='/Login'>
+              <NavLogin>Sign In</NavLogin> 
             </NavUser>
           </NavItem>
         </NavList>
